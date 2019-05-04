@@ -17,7 +17,7 @@
                 <div class="bar3"></div>
               </div>
               <div id="accContainer">
-                  <button onclick="location.href = 'index.html';" id="homeButton" class="accordion">Home</button>
+                  <button onclick="location.href = 'homepage.html';" id="homeButton" class="accordion">Home</button>
                   <button class="accordion">About Me</button>
                   <button class="accordion">Assignments</button>
               </div>
@@ -28,7 +28,6 @@
         <div class='section content'>
             <h2>
                 <?php
-                    date_default_timezone_set('Asia/Kolkata');
                     $timestamp = time();
                     $date_time = date("d-m-Y (D) H:i:s", $timestamp);
                     echo "Current date and local time on this server is $date_time";
