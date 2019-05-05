@@ -57,6 +57,7 @@ h1 {
 .aboutMe {
   text-align: center;
   background-color: lightgray;
+  padding: auto;
 }
 
 .footerClass {
