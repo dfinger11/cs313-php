@@ -17,7 +17,7 @@
             <div class="bar3"></div>
         </div>
         <div id="accContainer">
-            <button onclick="location.href = 'homepage.html';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
             <button class="accordion">About Me</button>
             <button class="accordion">Assignments</button>
         </div>
