@@ -28,7 +28,12 @@
     <div class='section content'>
         <h2>
             <?php
-            echo "Server Time: " . date("h:i:sa") . ". Server Date: " . date("d/m/Y");
+            echo "Server Time: " . date("h:i:sa")
+            ?>
+        </h2>
+        <h2>
+            <?php
+            echo "Server Date: " . date("d/m/Y");
             ?>
         </h2>
         <div class="slideshow-container">
