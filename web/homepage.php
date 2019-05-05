@@ -66,29 +66,29 @@
         </div>
         <br>
     </div>
-</div>
-<div class="aboutMeContainer">
-    <div class="aboutMe">
-        <h2 >About Me</h2>
-        <p>
-            Hey everyone! My name is Derek Finger and I am from Los Angeles, California.
-            <br>
-            I am a Software Engineering Major and will be graduating at the end of this
-            <br>
-            semester. I was married to the most amazing women in the entire world this
-            <br>
-            last November and I have loved every minute of it. I would say that web
-            <br>
-            is not my preferred development platform. I feel much more at home with
-            <br>
-            Android development on mobile. I decided to take this class becasue I wanted
-            <br>
-            to try it out and it was one of the only classes left I needed to graduate.
-            <br>
-            I am looking forward to working with you all this semester and hope you have
-            <br>
-            a great school year.
-        </p>
+    <div class="aboutMeContainer">
+        <div class="aboutMe">
+            <h2 >About Me</h2>
+            <p>
+                Hey everyone! My name is Derek Finger and I am from Los Angeles, California.
+                <br>
+                I am a Software Engineering Major and will be graduating at the end of this
+                <br>
+                semester. I was married to the most amazing women in the entire world this
+                <br>
+                last November and I have loved every minute of it. I would say that web
+                <br>
+                is not my preferred development platform. I feel much more at home with
+                <br>
+                Android development on mobile. I decided to take this class becasue I wanted
+                <br>
+                to try it out and it was one of the only classes left I needed to graduate.
+                <br>
+                I am looking forward to working with you all this semester and hope you have
+                <br>
+                a great school year.
+            </p>
+        </div>
     </div>
 </div>
 <div class="page">
