@@ -25,16 +25,18 @@
         <h1>Assignment List</h1>
     </div>
     <div class='section content'>
-        <h2>
-            <?php
-            echo "Server Time: " . date("h:i:sa")
-            ?>
-        </h2>
-        <h2>
-            <?php
-            echo "Server Date: " . date("d/m/Y");
-            ?>
-        </h2>
+        <div class='serverInfo'>
+            <h2>
+                <?php
+                echo "Server Time: " . date("h:i:sa")
+                ?>
+            </h2>
+            <h2>
+                <?php
+                echo "Server Date: " . date("d/m/Y");
+                ?>
+            </h2>
+        </div>
         <br>
         <div class="assignments">
             <h3>Assignment 1</h3>

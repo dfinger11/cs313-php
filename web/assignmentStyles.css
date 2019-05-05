@@ -47,6 +47,10 @@
     padding: auto;
 }
 
+.serverInfo {
+    text-align: center
+}
+
 h1 {
     margin-top: 50px;
     margin-left: 15px;
