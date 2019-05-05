@@ -57,13 +57,12 @@ h1 {
 .aboutMeContainer {
   background-color: lightgray;
   margin: 10px;
-  padding: auto;
 }
 
 .aboutMe {
   text-align: center;
-  margin: 10px;
   padding: auto;
+  margin: 10px;
 }
 
 .footerClass {
