@@ -53,6 +53,11 @@ h1 {
   text-align: center
 }
 
+.aboutMe {
+  text-align: center;
+  background-color: lightgray;
+}
+
 .footerClass {
   margin-left: 20px;
   margin-right: 20px;

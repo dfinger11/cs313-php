@@ -65,7 +65,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
         <br>
-        <div>
+        <div class="aboutMe">
             <h2>About Me</h2>
             <p>
                 Hey everyone! My name is Derek Finger and I am from Los Angeles, California.
