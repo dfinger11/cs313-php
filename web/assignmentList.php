@@ -37,11 +37,12 @@
         </h2>
         <br>
         <div class="assignments">
-            <p>Assignment 1</p>
-            <p>Assignment 2</p>
-            <p>Assignment 3</p>
-            <p>Assignment 4</p>
+            <h3>Assignment 1</h3>
+            <h3>Assignment 2</h3>
+            <h3>Assignment 3</h3>
+            <h3>Assignment 4</h3>
         </div>
+        <br>
     </div>
 </div>
 <div class="page">
