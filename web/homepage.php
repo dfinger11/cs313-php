@@ -25,16 +25,18 @@
         <h1>DEREK'S HOMEPAGE</h1>
     </div>
     <div class='section content'>
-        <h2>
-            <?php
-            echo "Server Time: " . date("h:i:sa")
-            ?>
-        </h2>
-        <h2>
-            <?php
-            echo "Server Date: " . date("d/m/Y");
-            ?>
-        </h2>
+        <div class='serverInfo'>
+            <h2>
+                <?php
+                echo "Server Time: " . date("h:i:sa")
+                ?>
+            </h2>
+            <h2>
+                <?php
+                echo "Server Date: " . date("d/m/Y");
+                ?>
+            </h2>
+        </div>
         <br>
         <div class="slideshow-container">
             <div class="indexSlides slideOne fade">
