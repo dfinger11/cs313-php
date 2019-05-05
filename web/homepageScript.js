@@ -49,5 +49,5 @@ function showSlides(n) {
 }
 
 document.getElementById("homeButton").onclick = function goHome() {
-  location.href = "homepage.html";
+  location.href = "homepage.php";
 };
