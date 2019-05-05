@@ -54,9 +54,14 @@ h1 {
   text-align: center
 }
 
+.aboutMeContainer {
+  background-color: lightgray;
+  margin: 10px;
+  padding: auto;
+}
+
 .aboutMe {
   text-align: center;
-  background-color: lightgray;
   margin: 10px;
   padding: auto;
 }
