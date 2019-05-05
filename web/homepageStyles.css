@@ -38,7 +38,8 @@
 .header {
   height: auto;
   align-items: inherit;
-  text-align: center
+  text-align: center;
+  background-color: white;
 }
 
 h1 {
