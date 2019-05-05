@@ -39,23 +39,6 @@
   background-color: whitesmoke;
 }
 
-.feature-1 {
-  background-color: lightgray;
-}
-
-.feature-2 {
-  background-color: whitesmoke;
-}
-
-.feature-3 {
-  background-color: lightgray;
-}
-
-.illustration img {
-    width: 100%;
-    display: block;
-  }
-
 .header {
   height: auto;
   align-items: inherit;
@@ -84,11 +67,6 @@ h1 {
   margin-top: 50px; 
   margin-bottom: 20px;
   font-size: 20px
-}
-
-.photo img {
-  width: 100%;
-  display: block;
 }
 
 #accContainer {
@@ -142,25 +120,12 @@ h1 {
   transition: 0.4s;
 }
 
-.accordionHome {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover, .accordionHome:hover {
   background-color: #ccc;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+/* Style the accordion panel. Note: This is not implemented yet. I may use this to add extra bits to the hamburger menu */
 .panel {
   padding: 0 18px;
   background-color: white;
@@ -284,12 +249,7 @@ img {vertical-align: middle;}
   
   /* Tablet Styles */
   @media only screen and (min-width: 401px) and (max-width: 960px) {
-    .sign-up,
-    .feature-1,
-    .feature-2,
-    .feature-3 {
-      width: 50%;
-    }
+
   }
   
   /* Desktop Styles */
@@ -297,16 +257,6 @@ img {vertical-align: middle;}
     .page {
         width: 960px;
         margin: 0 auto;
-      }
-      .feature-1,
-      .feature-2,
-      .feature-3 {
-        height: 400px;
-        width: 33.3%;
-      }
-      .sign-up {
-        height: 200px;
-        order: 2;
       }
       .content {
       }
