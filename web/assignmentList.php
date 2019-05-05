@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class='section header'>
-        <h1>AssignmentList</h1>
+        <h1>Assignment List</h1>
     </div>
     <div class='section content'>
         <h2>
