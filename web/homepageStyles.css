@@ -146,6 +146,7 @@ h1 {
 body {
   font-family: Verdana, sans-serif; 
   margin:0;
+  background-color: black;
 }
 .indexSlides {display: none}
 
