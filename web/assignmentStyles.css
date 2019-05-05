@@ -38,7 +38,8 @@
 .header {
     height: auto;
     align-items: inherit;
-    text-align: center
+    text-align: center;
+    background-color: white;
 }
 
 h1 {
@@ -133,6 +134,7 @@ h1 {
 body {
     font-family: Verdana, sans-serif;
     margin:0;
+    background-color: gray;
 }
 
 /* Caption text */

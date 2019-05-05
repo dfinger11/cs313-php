@@ -36,6 +36,12 @@
             ?>
         </h2>
         <br>
+        <div class="assignments">
+            <p>Assignment 1</p>
+            <p>Assignment 2</p>
+            <p>Assignment 3</p>
+            <p>Assignment 4</p>
+        </div>
     </div>
 </div>
 <div class="page">
