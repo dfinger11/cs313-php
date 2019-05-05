@@ -18,7 +18,6 @@
         </div>
         <div id="accContainer">
             <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
-            <button class="accordion">About Me</button>
             <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
         </div>
     </div>
@@ -36,6 +35,7 @@
             echo "Server Date: " . date("d/m/Y");
             ?>
         </h2>
+        <br>
         <div class="slideshow-container">
             <div class="indexSlides slideOne fade">
                 <div class="numbertext">1 / 3</div>
@@ -61,6 +61,29 @@
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <br>
+        <div>
+            <h2>About Me</h2>
+            <p>
+                Hey everyone! My name is Derek Finger and I am from Los Angeles, California.
+                <br>
+                I am a Software Engineering Major and will be graduating at the end of this
+                <br>
+                semester. I was married to the most amazing women in the entire world this
+                <br>
+                last November and I have loved every minute of it. I would say that web
+                <br>
+                is not my preferred development platform. I feel much more at home with
+                <br>
+                Android development on mobile. I decided to take this class becasue I wanted
+                <br>
+                to try it out and it was one of the only classes left I needed to graduate.
+                <br>
+                I am looking forward to working with you all this semester and hope you have
+                <br>
+                a great school year.
+            </p>
         </div>
     </div>
 </div>
