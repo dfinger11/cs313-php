@@ -42,7 +42,7 @@ require 'commonMethods.php';
                     <td width="10px"></td>
                     <td><button onclick="location.href='?add=<?php echo($i); ?>';">Add to cart</button></td>
                     <td width="10px"></td>
-                    <td><button onclick="location.href='?delete=<?php echo($i); ?>';">Add to cart</button></td>
+                    <td><button onclick="location.href='?delete=<?php echo($i); ?>';">Remove from cart</button></td>
                 </tr>
                 <?php
                 $total = $total + $_SESSION["amounts"][$i];
