@@ -1,0 +1,69 @@
+img {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 10px;
+    background-color: black;
+}
+
+th, td {
+    align-content: center;
+    text-align: center;
+}
+
+th {
+    font-size: 30px;
+}
+
+.header, .footer {
+    background-color: darkred;
+    color: white;
+    min-height: 50px;
+}
+
+.footer {
+    padding: 50px;
+}
+
+.content {
+    margin: 20px;
+    background-color: white;
+    padding: 50px;
+}
+
+.textHeader1, .textHeader2 {
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black,
+    0px 1px 0 black, 0px -1px 0 black, -1px 0px 0 black, 1px 0px 0 black,
+    2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black,
+    0px 2px 0 black, 0px -2px 0 black, -2px 0px 0 black, 2px 0px 0 black,
+    1px 2px 0 black, -1px 2px 0 black, 1px -2px 0 black, -1px -2px 0 black,
+    2px 1px 0 black, -2px 1px 0 black, 2px -1px 0 black, -2px -1px 0 black;
+}
+
+.textHeader1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textHeader2 {
+    padding-bottom: 50px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: black;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.cartButton {
+    margin-right: 30px;
+}
+
+body {
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}

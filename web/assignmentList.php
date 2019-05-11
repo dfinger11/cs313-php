@@ -39,10 +39,7 @@
         </div>
         <br>
         <div class="assignments">
-            <h3>Assignment 1</h3>
-            <h3>Assignment 2</h3>
-            <h3>Assignment 3</h3>
-            <h3>Assignment 4</h3>
+            <button onclick="location.href = 'prove3/browsingPage.php';" id="homeButton"><h3>Prove 3: Shopping Cart</h3></button>
         </div>
         <br>
     </div>
