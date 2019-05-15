@@ -39,7 +39,7 @@
         </div>
         <br>
         <div class="assignments">
-            <button onclick="location.href = 'prove3/browsingPage.php';" id="homeButton"><h3>Prove 3: Shopping Cart</h3></button>
+            <button onclick="location.href = 'assignments/prove3/browsingPage.php';" id="homeButton"><h3>Prove 3: Shopping Cart</h3></button>
         </div>
         <br>
     </div>
