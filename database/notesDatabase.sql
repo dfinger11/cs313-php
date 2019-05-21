@@ -1,17 +1,17 @@
 --Data Tables__
-CREATE TABLE famUsers (
+CREATE TABLE famusers (
     user_pk SERIAL      NOT NULL PRIMARY KEY,
 	username            TEXT NOT NULL UNIQUE,
 	password_hash       TEXT NOT NULL,
 	fname               TEXT NOT NULL,
-	lname               TEXT NOT NULL,
-	member_fk           INT NOT NULL REFERENCES familymember(member_pk)
+	lname               TEXT NOT NULL
 );
 
 CREATE TABLE familymember (
     member_pk SERIAL    NOT NULL PRIMARY KEY,
     family_title        TEXT NOT NULL, --Mother, Father, Child
-    family_fk           INT NOT NULL REFERENCES family(family_pk)
+    family_fk           INT NOT NULL REFERENCES family(family_pk),
+    user_pk             INT NOT NULL REFERENCES famusers(user_pk)
 );
 
 CREATE TABLE family (
@@ -48,11 +48,11 @@ CREATE TABLE task (
 );
 
 -- Insert examples --
---INSERT INTO users (username, password_hash, fname, lname) VALUES (
---  'TestDummy42',
---  crypto('johnspassword', gen_salt('bf')),
---  'John',
---  'Doe'
---);
+INSERT INTO famusers (username, password_hash, fname, lname) VALUES (
+  'TestDummy1',
+  'test1',
+  'John1',
+  'Doe1'
+);
 
 
