@@ -14,8 +14,8 @@ function get_db() {
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
 
-        if (empty($dbUrl)) {
-            $dbUrl = "postgres://postgres:password@localhost:5432/cs313-db";
+        if(!isset($dbUrl) || empty($dbUrl)) {
+            echo "Failed getting database!";
         }
 
         // Get the various parts of the DB Connection from the URL

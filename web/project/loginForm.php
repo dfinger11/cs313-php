@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "database/dbConnect.php";
+require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = crypt(htmlspecialchars($_POST['password']), CRYPT_BLOWFISH);
 $db = get_db();
