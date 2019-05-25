@@ -2,7 +2,7 @@
 session_start();
 require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
-$password = crypt(htmlspecialchars($_POST['password']), CRYPT_BLOWFISH);
+$password = htmlspecialchars($_POST['password']);
 $db = get_db();
 $statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
 $userFound = $statement->execute();
