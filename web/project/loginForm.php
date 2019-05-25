@@ -1,7 +1,6 @@
 <?php
-require "database/dbConnect.php";
-include "login.php";
 session_start();
+require "database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = crypt(htmlspecialchars($_POST['password']), CRYPT_BLOWFISH);
 $db = get_db();
@@ -14,7 +13,7 @@ if($userFound) {
 
 } else {
     $_SESSION['authenticated'] = false;
-    ?><span><?php echo "Username or Password is incorrect!!";?></span> <?php
+    header("Location:login.php");
 }
 ?>
 
