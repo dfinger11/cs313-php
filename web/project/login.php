@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(isset($_SESSION['authenticated'])) {
+    if($_SESSION['authenticated'] == true) {
+        header("Location:familyHome.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -18,7 +23,7 @@ session_start();
     </div>
     <div class="content">
         <h3>Login</h3>
-        <form action="loginForm.php" method="post">
+        <form action="../../database/loginForm.php" method="post">
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
