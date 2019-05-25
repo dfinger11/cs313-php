@@ -1,6 +1,6 @@
 <?php
 require "database/dbConnect.php";
-include "../web/project/login.php";
+include "login.php";
 session_start();
 $username = htmlspecialchars($_POST['username']);
 $password = crypt(htmlspecialchars($_POST['password']), CRYPT_BLOWFISH);
@@ -10,7 +10,7 @@ $userFound = $statement->execute();
 
 if($userFound) {
     $_SESSION['authenticated'] = true;
-    header("Location:../web/project/familyHome.php");
+    header("Location:familyHome.php");
 
 } else {
     $_SESSION['authenticated'] = false;

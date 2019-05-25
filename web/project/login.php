@@ -23,7 +23,7 @@ if(isset($_SESSION['authenticated'])) {
     </div>
     <div class="content">
         <h3>Login</h3>
-        <form action="../../database/loginForm.php" method="post">
+        <form action="loginForm.php" method="post">
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
