@@ -35,7 +35,7 @@ $userFound = $statement->execute();
 
         if($userFound) {
             $_SESSION['authenticated'] = true;
-            header("Location:familyHome.php");
+        ?><span><?php echo "Login success!"?><span><?php
         } else {
         $_SESSION['authenticated'] = false;
         header("Location:login.php");
