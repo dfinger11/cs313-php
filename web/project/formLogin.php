@@ -35,7 +35,7 @@ if (!empty($rowCount) && $rowCount == 1) {
         <form action="formLogin.php" method="post">
             <?php
             if($_SESSION['authenticated'] == true) {
-                header("familyHome.php");
+                header("Location: familyHome.php");
             } else {
                 ?><span><?php echo "Username or password is incorrect!"?></span><br><?php
             }
