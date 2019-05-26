@@ -46,13 +46,103 @@ CREATE TABLE task (
     added_by            TEXT NOT NULL DEFAULT current_user,
     project_fk          INT NOT NULL REFERENCES project(project_pk)
 );
-
--- Insert examples --
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-- ADD TEST USERS --
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-- Insert Vader --
 INSERT INTO famusers (username, password_hash, fname, lname) VALUES (
-  'TestDummy1',
-  'test1',
-  'John1',
-  'Doe1'
+    'DarthVader',
+    'VaderRocks',
+    'Anakin',
+    'Skywalker'
 );
+
+-- Insert Padme --
+INSERT INTO famusers (username, password_hash, fname, lname) VALUES (
+    'Queenie',
+    'littleAnnie',
+    'Padme',
+    'Skywalker'
+);
+
+-- Insert Luke --
+INSERT INTO famusers (username, password_hash, fname, lname) VALUES (
+    'JediMan',
+    'TheForce',
+    'Luke',
+    'Skywalker'
+);
+
+-- Insert Leia --
+INSERT INTO famusers (username, password_hash, fname, lname) VALUES (
+    'Princess',
+    'Alderaan',
+    'Leia',
+    'Skywalker'
+);
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-- ADD TEST FAMILY--
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+INSERT INTO family (family_name) VALUES (
+    'Skywalker'
+);
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-- ADD TEST FAMILY MEMBERS--
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+-- ADD Vader TO THE Skywalker FAMILY --
+INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
+    'father',
+    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
+    (SELECT user_pk FROM famusers WHERE username = 'DarthVader')
+);
+
+-- ADD Padme TO THE Skywalker FAMILY --
+INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
+    'mother',
+    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
+    (SELECT user_pk FROM famusers WHERE username = 'Queenie')
+);
+
+-- ADD Luke TO THE Skywalker FAMILY --
+INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
+    'child',
+    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
+    (SELECT user_pk FROM famusers WHERE username = 'JediMan')
+);
+
+-- ADD Leia TO THE Skywalker FAMILY --
+INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
+    'child',
+    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
+    (SELECT user_pk FROM famusers WHERE username = 'Princess')
+);
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+--Select user
+SELECT * FROM famusers WHERE username='DarthVader' AND password_hash = 'VaderRocks';
+SELECT user_pk FROM famusers WHERE username = 'DarthVader';
 
 

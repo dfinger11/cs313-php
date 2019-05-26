@@ -4,7 +4,7 @@ require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $db = get_db();
-$statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
+$statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password';");
 $statement->execute();
 
 $rowCount = $statement->rowCount();
