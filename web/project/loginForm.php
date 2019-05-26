@@ -4,9 +4,7 @@ require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $db = get_db();
-$statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
-$statement->execute();
-$userFound = $statement->queryString;
+$userList =  $db->query("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'")
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -33,8 +31,8 @@ $userFound = $statement->queryString;
             <input type="submit" value="Login">
         </form>
         <?php
-        echo $userFound;
-        if($userFound) {
+        echo $userList;
+        if(!empty($userList)) {
             $_SESSION['authenticated'] = true;
         ?><span><?php echo "Login success!"?><span><?php
         } else {
