@@ -4,7 +4,8 @@ require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $db = get_db();
-$userList =  $db->query("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'")->fetch();
+$userList =  $db->query("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
+$rowCount = $userList->rowCount()
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -31,8 +32,8 @@ $userList =  $db->query("SELECT * FROM famusers WHERE username='$username' AND p
             <input type="submit" value="Login">
         </form>
         <?php
-        echo $userList;
-        if(!empty($userList)) {
+        echo $rowCount;
+        if(!empty($rowCount) && $rowCount == 1) {
             $_SESSION['authenticated'] = true;
         ?><span><?php echo "Login success!"?><span><?php
         } else {
