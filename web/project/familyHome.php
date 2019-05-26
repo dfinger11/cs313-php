@@ -23,27 +23,42 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     </div>
     <div class="content">
         <?php
-        $statement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
+        $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
                                          SELECT DISTINCT ON (family_fk) family_fk FROM familymember WHERE user_pk=
                                               (
-                                                  SELECT user_pk FROM famusers WHERE username='DarthVader'
+                                                  SELECT user_pk FROM famusers WHERE username='$username'
                                               )
                                      );
 ");
-        $statement->execute();
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-        {
-            // The variable "row" now holds the complete record for that
-            // row, and we can access the different values based on their
-            // name
-            $famName = $row['family_name'];
-            $chapter = $row['chapter'];
-            $verse = $row['verse'];
-            $content = $row['content'];
-            echo "<h3>$famName Family</h3>";
+        $famStatement->execute();
+        $famNameRow = $famStatement->fetch(PDO::FETCH_ASSOC);
+        $famName = $famNameRow['family_name'];
+
+        $memberStatment = $db->prepare("");
+        $memberStatment->execute();
+        ?>
+        <table>
+            <th>Name</th>
+            <th>Title</th>
+        <?php
+        while ($memberRow = &$memberStatment->fetch(PDO::FETCH_ASSOC)) {
+            $fname = $memberRow['fname'];
+            $lname = $memberRow['lname'];
+            $title = $memberRow['family_title'];
+            ?>
+            <td><?php echo "$fname $lname"?></td>
+            <td><?php echo "$title"?></td>
+            <?php
         }
         ?>
+        </table>
+        <?php
+        ?>
+        <table>
+            <thead><?php echo "$famName Family"?></thead>
+
+        </table>
     </div>
     <div class="footer">
 

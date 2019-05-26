@@ -149,9 +149,17 @@ INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
 -- Select user --
 SELECT * FROM famusers WHERE username='DarthVader' AND password_hash = 'VaderRocks';
 
--- Get family members from a family --
-SELECT family_name from family WHERE family_pk=(SELECT DISTINCT ON (family_fk) family_fk FROM familymember WHERE user_pk=(SELECT user_pk FROM famusers WHERE username='DarthVader'));
+-- Get family name --
+SELECT family_name from family WHERE family_pk=(
+    SELECT DISTINCT ON (family_fk) family_fk FROM familymember WHERE user_pk=(
+        SELECT user_pk FROM famusers WHERE username='DarthVader'
+        )
+    );
 
+-- get family members --
+SELECT famusers.fname, famusers.lname FROM famusers INNER JOIN familymember ON (
+    SELECT user_pk FROM famusers) = (SELECT familymember.user_pk FROM familymember WHERE family_fk='1');
+SELECT family_title FROM familymember WHERE family_fk='1';
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
