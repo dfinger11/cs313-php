@@ -39,6 +39,7 @@ if (!empty($rowCount) && $rowCount == 1) {
             <input type="submit" value="Login">
         </form>
         <?php
+        echo $rowCount;
         if($_SESSION['authenticated'] == true) {
             ?><span><?php echo "Login success!"?><span><?php
         } else {
