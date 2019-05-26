@@ -26,7 +26,7 @@ $rowCount = $statement->rowCount();
     </div>
     <div class="content">
         <h3>Login</h3>
-        <form action="loginForm.php" method="post">
+        <form action="formLogin.php" method="post">
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">

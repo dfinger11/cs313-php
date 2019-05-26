@@ -19,7 +19,7 @@ session_start();
     </div>
     <div class="content">
         <h3>Register</h3>
-        <form action="registerForm.php" method="post">
+        <form action="formRegister.php" method="post">
             New Username: <input type="text" name="username">
             <br>
             New Password: <input type="password" name="password">
