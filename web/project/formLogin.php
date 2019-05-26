@@ -10,6 +10,7 @@ $statement->execute();
 $rowCount = $statement->rowCount();
 if (!empty($rowCount) && $rowCount == 1) {
     $_SESSION['authenticated'] = true;
+    $_SESSION['username'] = $username;
 } else {
     $_SESSION['authenticated'] = false;
 }
@@ -32,20 +33,19 @@ if (!empty($rowCount) && $rowCount == 1) {
     <div class="content">
         <h3>Login</h3>
         <form action="formLogin.php" method="post">
+            <?php
+            if($_SESSION['authenticated'] == true) {
+                header("familyHome.php");
+            } else {
+                ?><span><?php echo "Username or password is incorrect!"?></span><br><?php
+            }
+            ?>
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
             <br>
             <input type="submit" value="Login">
         </form>
-        <?php
-        echo $rowCount;
-        if($_SESSION['authenticated'] == true) {
-            ?><span><?php echo "Login success!"?><span><?php
-        } else {
-            ?><span><?php echo "Login failed!"?><span><?php
-        }
-        ?>
         <h3>Don't have an account <a  onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="footer">
