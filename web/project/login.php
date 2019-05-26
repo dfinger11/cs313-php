@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['authenticated'])) {
     if($_SESSION['authenticated'] == true) {
-        header("Location:familyHome.php");
+        //header("Location:familyHome.php");
     }
 }
 require "../../database/dbConnect.php";
@@ -50,7 +50,6 @@ function authenticate()
         if($_SESSION['authenticated'] == true) {
             ?><span><?php echo "Login success!"?><span><?php
         } else {
-            header("Location:login.php");
             ?><span><?php echo "Login failed!"?><span><?php
         }
         ?>
