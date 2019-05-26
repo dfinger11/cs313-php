@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['authenticated'])) {
     if($_SESSION['authenticated'] == true) {
-        //header("Location:familyHome.php");
+        header("Location: familyHome.php");
     }
 }
 ?>
@@ -30,7 +30,7 @@ if(isset($_SESSION['authenticated'])) {
             <br>
             <input type="submit" value="Login">
         </form>
-        <h3>Don't have an account <a  onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
+        <h3>Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="footer">
 

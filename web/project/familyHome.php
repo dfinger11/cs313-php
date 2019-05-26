@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['authentication']) && $_SESSION['authentication'] == true) {
+if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
     ?>
