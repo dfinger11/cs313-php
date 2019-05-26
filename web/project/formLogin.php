@@ -37,7 +37,7 @@ if (!empty($rowCount) && $rowCount == 1) {
             if($_SESSION['authenticated'] == true) {
                 header("Location: familyHome.php");
             } else {
-                ?><span><?php echo "Username or password is incorrect!"?></span><br><?php
+                ?><span style="color: red"><?php echo "Username or password is incorrect!"?></span><br><?php
             }
             ?>
             Username: <input type="text" name="username">
