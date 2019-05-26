@@ -5,7 +5,8 @@ $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $db = get_db();
 $statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
-$userFound = $statement->execute();
+$statement->execute();
+$userFound = $statement->queryString;
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -32,7 +33,7 @@ $userFound = $statement->execute();
             <input type="submit" value="Login">
         </form>
         <?php
-
+        echo $userFound;
         if($userFound) {
             $_SESSION['authenticated'] = true;
         ?><span><?php echo "Login success!"?><span><?php
