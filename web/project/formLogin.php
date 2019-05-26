@@ -4,10 +4,15 @@ require "../../database/dbConnect.php";
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $db = get_db();
-$statement =  $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
+$statement = $db->prepare("SELECT * FROM famusers WHERE username='$username' AND password_hash = '$password'");
 $statement->execute();
 
 $rowCount = $statement->rowCount();
+if (!empty($rowCount) && $rowCount == 1) {
+    $_SESSION['authenticated'] = true;
+} else {
+    $_SESSION['authenticated'] = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -34,13 +39,9 @@ $rowCount = $statement->rowCount();
             <input type="submit" value="Login">
         </form>
         <?php
-        echo $rowCount;
-        if(!empty($rowCount) && $rowCount == 1) {
-            $_SESSION['authenticated'] = true;
+        if($_SESSION['authenticated'] == true) {
             ?><span><?php echo "Login success!"?><span><?php
         } else {
-            $_SESSION['authenticated'] = false;
-            header("Location:login.php");
             ?><span><?php echo "Login failed!"?><span><?php
         }
         ?>
