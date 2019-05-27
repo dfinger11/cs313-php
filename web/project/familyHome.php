@@ -25,17 +25,15 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
-                                         SELECT DISTINCT ON (family_fk) family_fk FROM familymember WHERE user_pk=
-                                              (
-                                                  SELECT user_pk FROM famusers WHERE username='$username'
-                                              )
+                                         SELECT DISTINCT ON (family_fk) family_fk FROM famusers WHERE username='$username'
                                      );
 ");
         $famStatement->execute();
         $famNameRow = $famStatement->fetch(PDO::FETCH_ASSOC);
         $famName = $famNameRow['family_name'];
 
-        $memberStatment = $db->prepare("");
+        $memberStatment = $db->prepare("SELECT fname, lname, family_title FROM famusers WHERE family_fk=(
+                                                    SELECT family_fk FROM famusers WHERE username='$username');");
         $memberStatment->execute();
         ?>
         <table>

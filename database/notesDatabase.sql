@@ -4,7 +4,9 @@ CREATE TABLE famusers (
 	username            TEXT NOT NULL UNIQUE,
 	password_hash       TEXT NOT NULL,
 	fname               TEXT NOT NULL,
-	lname               TEXT NOT NULL
+	lname               TEXT NOT NULL,
+    family_fk           INT REFERENCES family(family_pk),
+    family_title        TEXT --Mother, Father, Child
 );
 
 CREATE TABLE familymember (
@@ -157,11 +159,12 @@ SELECT family_name from family WHERE family_pk=(
     );
 
 -- get family members --
-SELECT famusers.fname, famusers.lname FROM famusers INNER JOIN familymember ON (
-    SELECT user_pk FROM famusers) = (SELECT familymember.user_pk FROM familymember WHERE family_fk='1');
-SELECT family_title FROM familymember WHERE family_fk='1';
+SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='DarthVader');
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
+ALTER TABLE famusers ADD COLUMN family_fk INT REFERENCES family(family_pk);
+
+UPDATE famusers SET family_fk = 1 WHERE username = 'DarthVader';
