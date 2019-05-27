@@ -39,6 +39,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <table>
             <tr>
                 <th>Name</th>
+                <th style="width: 10px"></th>
                 <th>Title</th>
             </tr>
         <?php
@@ -49,6 +50,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             ?>
             <tr>
                 <td><?php echo "$fname $lname"?></td>
+                <td style="width: 10px"></td>
                 <td><?php echo "$title"?></td>
             </tr>
             <?php
@@ -73,4 +75,3 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     header("Location: login.php");
 }
 ?>
-Welcome
