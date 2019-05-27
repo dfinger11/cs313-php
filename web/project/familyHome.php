@@ -37,6 +37,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         $memberStatment->execute();
         ?>
         <table>
+            <thead><?php echo "The $famName Family"?></thead>
             <tr>
                 <th>Name</th>
                 <th style="width: 10px"></th>
@@ -59,10 +60,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <?php
         ?>
-        <table>
-            <thead><?php echo "$famName Family"?></thead>
-
-        </table>
     </div>
     <div class="footer">
 
