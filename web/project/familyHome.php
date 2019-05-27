@@ -19,7 +19,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 <div class="page">
     <div class="header">
         <h1 class="textHeader1">The Family Room</h1>
-        <h2 class="textHeader3">Here you can see your family members</h2>
+        <h2 class="textHeader3">Here you can see all the members of your family</h2>
     </div>
     <div class="content">
         <?php
