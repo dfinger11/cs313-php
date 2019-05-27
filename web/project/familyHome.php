@@ -34,7 +34,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 
         $memberStatment = $db->prepare(
                 "select fname, lname, familymember.family_title from famusers, familymember where famusers.family_fk=(
-                            select family_fk from famusers where username='DarthVader') AND famusers.user_pk = familymember.user_pk;");
+                            select family_fk from famusers where username='$username') AND famusers.user_pk = familymember.user_pk;");
         $memberStatment->execute();
         ?>
         <table>
