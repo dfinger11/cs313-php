@@ -168,3 +168,6 @@ SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famuser
 ALTER TABLE famusers ADD COLUMN family_fk INT REFERENCES family(family_pk);
 
 UPDATE famusers SET family_fk = 1 WHERE username = 'DarthVader';
+
+select fname, lname, familymember.family_title from famusers, familymember where famusers.family_fk=(
+    select family_fk from famusers where username='DarthVader') AND famusers.user_pk = familymember.user_pk;
