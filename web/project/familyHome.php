@@ -32,9 +32,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         $famNameRow = $famStatement->fetch(PDO::FETCH_ASSOC);
         $famName = $famNameRow['family_name'];
 
-        $memberStatment = $db->prepare(
-                "select fname, lname, familymember.family_title from famusers, familymember where famusers.family_fk=(
-                            select family_fk from famusers where username='$username') AND famusers.user_pk = familymember.user_pk;");
+        $memberStatment = $db->prepare("SELECT fname, lname, family_title FROM famusers WHERE family_fk=(
+                                                    SELECT family_fk FROM famusers WHERE username='$username');");
         $memberStatment->execute();
         ?>
         <table>
