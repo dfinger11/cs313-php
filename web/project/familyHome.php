@@ -37,16 +37,20 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         $memberStatment->execute();
         ?>
         <table>
-            <th>Name</th>
-            <th>Title</th>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+            </tr>
         <?php
         while ($memberRow = &$memberStatment->fetch(PDO::FETCH_ASSOC)) {
             $fname = $memberRow['fname'];
             $lname = $memberRow['lname'];
             $title = $memberRow['family_title'];
             ?>
-            <td><?php echo "$fname $lname"?></td>
-            <td><?php echo "$title"?></td>
+            <tr>
+                <td><?php echo "$fname $lname"?></td>
+                <td><?php echo "$title"?></td>
+            </tr>
             <?php
         }
         ?>
