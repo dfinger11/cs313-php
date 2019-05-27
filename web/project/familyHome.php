@@ -39,7 +39,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <table>
             <thead><?php echo "The $famName Family"?></thead>
             <tr>
-                <th>Name</th>
+                <th>First Name</th>
+                <th style="width: 10px"></th>
+                <th>Last Name</th>
                 <th style="width: 10px"></th>
                 <th>Title</th>
             </tr>
@@ -50,7 +52,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             $title = $memberRow['family_title'];
             ?>
             <tr>
-                <td><?php echo "$fname $lname"?></td>
+                <td><?php echo "$fname"?></td>
+                <td style="width: 10px"></td>
+                <td><?php echo "$lname"?></td>
                 <td style="width: 10px"></td>
                 <td><?php echo "$title"?></td>
             </tr>
