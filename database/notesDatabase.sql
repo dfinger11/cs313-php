@@ -9,13 +9,6 @@ CREATE TABLE famusers (
     family_title        TEXT --Mother, Father, Child
 );
 
-CREATE TABLE familymember (
-    member_pk SERIAL    NOT NULL PRIMARY KEY,
-    family_title        TEXT NOT NULL, --Mother, Father, Child
-    family_fk           INT NOT NULL REFERENCES family(family_pk),
-    user_pk             INT NOT NULL REFERENCES famusers(user_pk)
-);
-
 CREATE TABLE family (
     family_pk SERIAL    NOT NULL PRIMARY KEY,
     family_name         TEXT NOT NULL
