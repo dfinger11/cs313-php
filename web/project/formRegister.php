@@ -1,13 +1,13 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
-$username = htmlspecialchars($_POST['username']);
-$password = htmlspecialchars($_POST['password']);
-$repassword = htmlspecialchars($_POST['repassword']);
-$fname = htmlspecialchars($_POST['fname']);
-$lname = htmlspecialchars($_POST['lname']);
-$title = htmlspecialchars($_POST['famTitle']);
-$family = htmlspecialchars($_POST['family']);
+$username = strip_tags($_POST['username']);
+$password = strip_tags($_POST['password']);
+$repassword = strip_tags($_POST['repassword']);
+$fname = strip_tags($_POST['fname']);
+$lname = strip_tags($_POST['lname']);
+$title = strip_tags($_POST['famTitle']);
+$family = strip_tags($_POST['family']);
 
 $db = get_db();
 $statement = $db->prepare("SELECT * FROM famusers WHERE username='$username';");
@@ -25,6 +25,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
 } else if($password != $repassword
             || $title == "none"
             || "" == trim($_POST['family'])
+            || "" == trim($_POST['username'])
             ||  "" == trim($_POST['fname'])
             || "" == trim($_POST['lname'])) {
 
@@ -89,6 +90,8 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
             <?php
             if($userExists == true) {
                 ?><span style="color: red"><?php echo "Username already exists!"?></span><br><?php
+            }else if("" == trim($_POST['username'])) {
+                ?><span style="color: red"><?php echo "Username can be blank!"?></span><br><?php
             }
             ?>
             New Username: <input type="text" name="username">
