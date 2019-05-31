@@ -54,9 +54,8 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             '$title'
                                                         );");
     $userStatement->execute();
-    $checkStatement = $db->prepare("SELECT * FROM famusers WHERE family_fk=(
-                                                                SELECT family_pk FROM family WHERE family_name ='$family') 
-                                                                AND username='$username'");
+    $checkStatement = $db->prepare("Select * FROM famusers WHERE family_fk=(
+                                                        SELECT family_pk FROM family WHERE family_name='$family') AND username='$username';");
     $checkStatement->execute();
     $rowsCount = $checkStatement->rowCount();
     if(!empty($rowCount) && $rowCount == 1) {
