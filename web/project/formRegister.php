@@ -54,16 +54,9 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             '$title'
                                                         );");
     $userStatement->execute();
-    $checkStatement = $db->prepare("Select * FROM famusers WHERE family_fk=(SELECT family_pk FROM family WHERE family_name='$family') AND username='$username';");
-    $checkStatement->execute();
-    $rowsCount = $checkStatement->rowCount();
-    if(!empty($rowCount) && $rowCount == 1) {
-        $_SESSION['authenticated'] = true;
-        $_SESSION['username'] = $username;
-        header("Location: familyHome.php");
-    } else {
-        echo "$rowCount<br>Fail!!!!";
-    }
+    $_SESSION['authenticated'] = true;
+    $_SESSION['username'] = $username;
+    header("Location: familyHome.php");
 }
 ?>
 <!DOCTYPE html>
