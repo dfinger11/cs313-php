@@ -42,12 +42,9 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
     $updateStatement->execute();
 
 } */else {
-    $updateStatement = $db->prepare("INSERT INTO family (family_name) 
-                                                        VALUES (
-                                                            $family
-                                                        );");
-    $updateStatement->execute();
-    $updateStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname, family_fk, family_title) 
+    $insertFamStatement = $db->prepare("INSERT INTO family (family_name) VALUES ($family);");
+    $insertFamStatement->execute();
+    $userStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname, family_fk, family_title) 
                                                         VALUES (
                                                             $username,
                                                             $password,
@@ -56,12 +53,12 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             (SELECT family_pk FROM family WHERE family_name ='$family'),
                                                             $title
                                                         );");
-    $updateStatement->execute();
-    $updateStatement = $db->prepare("SELECT * FROM famusers WHERE family_fk=(
+    $userStatement->execute();
+    $checkStatement = $db->prepare("SELECT * FROM famusers WHERE family_fk=(
                                                                 SELECT family_pk FROM family WHERE family_name ='$family') 
                                                                 AND username='$username'");
-    $updateStatement->execute();
-    $rowsCount = $updateStatement->rowCount();
+    $checkStatement->execute();
+    $rowsCount = $checkStatement->rowCount();
     if(!empty($rowCount) && $rowCount == 1) {
         echo "Success!!!!";
     } else {
