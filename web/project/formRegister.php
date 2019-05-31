@@ -34,25 +34,27 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             $username,
                                                             $password,
                                                             $fname,
-                                                            $lname
+                                                            $lname,
+                                                            (SELECT family_pk FROM family WHERE family_name ='$family'),
+                                                            $title
                                                         );");
     $updateStatement->execute();
 } else {
-    $updateStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname) 
-                                                        VALUES (
-                                                            $username,
-                                                            $password,
-                                                            $fname,
-                                                            $lname
-                                                        );");
-    $updateStatement->execute();
     $updateStatement = $db->prepare("INSERT INTO family (family_name) 
                                                         VALUES (
                                                             $family
                                                         );");
     $updateStatement->execute();
-    $updateStatement = $db->prepare("UPDATE famusers SET family_fk =(
-                                                    SELECT family_pk FROM family WHERE family_name ='$family') WHERE username ='$username';");
+    $updateStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname, family_fk, family_title) 
+                                                        VALUES (
+                                                            $username,
+                                                            $password,
+                                                            $fname,
+                                                            $lname,
+                                                            (SELECT family_pk FROM family WHERE family_name ='$family'),
+                                                            $title
+                                                            
+                                                        );");
     $updateStatement->execute();
     $updateStatement = $db->prepare("SELECT * FROM famusers WHERE family_fk=(
                                                                 SELECT family_pk FROM family WHERE family_name ='$family') 
