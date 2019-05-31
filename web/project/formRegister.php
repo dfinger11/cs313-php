@@ -30,7 +30,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
             || "" == trim($_POST['lname'])) {
 
 } else if (!empty($rowCountFam) && $rowCountFam == 1) {
-    $updateStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname) 
+    $updateStatement = $db->prepare("INSERT INTO famusers (username, password_hash, fname, lname, family_fk, family_title) 
                                                         VALUES (
                                                             $username,
                                                             $password,
@@ -54,7 +54,6 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             $lname,
                                                             (SELECT family_pk FROM family WHERE family_name ='$family'),
                                                             $title
-                                                            
                                                         );");
     $updateStatement->execute();
     $updateStatement = $db->prepare("SELECT * FROM famusers WHERE family_fk=(
