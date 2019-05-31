@@ -20,13 +20,25 @@ session_start();
     <div class="content">
         <h3>Register</h3>
         <form action="formRegister.php" method="post">
-            New Username: <input type="text" name="username">
+            Username: <input type="text" name="username">
             <br>
-            New Password: <input type="password" name="password">
+            Password: <input type="password" name="password">
+            <br>
+            Re-enter password: <input type="password" name="repassword">
             <br>
             First Name: <input type="text" name="fname">
             <br>
             Last Name: <input type="text" name="lname">
+            <br>
+            Family title:
+            <select name="famTitle">
+                <option value="none" >Select Title</option>
+                <option value="Father" >Father</option>
+                <option value="Mother" >Mother</option>
+                <option value="Child" >Child</option>
+            </select>
+            <br>
+            Family Group: <input type="text" name="family">
             <br>
             <input type="submit">
         </form>

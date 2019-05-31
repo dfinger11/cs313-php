@@ -96,41 +96,6 @@ INSERT INTO family (family_name) VALUES (
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-
--------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------
--- ADD TEST FAMILY MEMBERS --
--------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------
-
--- ADD Vader TO THE Skywalker FAMILY --
-INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
-    'father',
-    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
-    (SELECT user_pk FROM famusers WHERE username = 'DarthVader')
-);
-
--- ADD Padme TO THE Skywalker FAMILY --
-INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
-    'mother',
-    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
-    (SELECT user_pk FROM famusers WHERE username = 'Queenie')
-);
-
--- ADD Luke TO THE Skywalker FAMILY --
-INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
-    'child',
-    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
-    (SELECT user_pk FROM famusers WHERE username = 'JediMan')
-);
-
--- ADD Leia TO THE Skywalker FAMILY --
-INSERT INTO familymember (family_title, family_fk, user_pk) VALUES (
-    'child',
-    (SELECT family_pk FROM family WHERE family_name = 'Skywalker'),
-    (SELECT user_pk FROM famusers WHERE username = 'Princess')
-);
-
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -162,5 +127,4 @@ ALTER TABLE famusers ADD COLUMN family_fk INT REFERENCES family(family_pk);
 
 UPDATE famusers SET family_fk = 1 WHERE username = 'DarthVader';
 
-select fname, lname, familymember.family_title from famusers, familymember where famusers.family_fk=(
-    select family_fk from famusers where username='DarthVader') AND famusers.user_pk = familymember.user_pk;
+UPDATE famusers SET family_fk =(SELECT family_pk FROM family WHERE family_name ='') WHERE username = '';
