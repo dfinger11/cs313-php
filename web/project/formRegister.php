@@ -59,7 +59,9 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
     $checkStatement->execute();
     $rowsCount = $checkStatement->rowCount();
     if(!empty($rowCount) && $rowCount == 1) {
-        echo "Success!!!!";
+        $_SESSION['authenticated'] = true;
+        $_SESSION['username'] = $username;
+        header("Location: familyHome.php");
     } else {
         echo "Fail!!!!";
     }
@@ -133,7 +135,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                 ?><span style="color: red"><?php echo "Please enter your family's name!"?></span><br><?php
             }
             ?>
-            Family Group: <input type="text" name="family">
+            Family Name: <input type="text" name="family">
             <br>
             <input type="submit">
         </form>
