@@ -38,7 +38,7 @@ session_start();
                 <option value="Child" >Child</option>
             </select>
             <br>
-            Family Group: <input type="text" name="family">
+            Family Name: <input type="text" name="family">
             <br>
             <input type="submit">
         </form>

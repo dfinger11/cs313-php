@@ -58,6 +58,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                         SELECT family_pk FROM family WHERE family_name='$family') AND username='$username';");
     $checkStatement->execute();
     $rowsCount = $checkStatement->rowCount();
+    echo "$rowCount<br>";
     if(!empty($rowCount) && $rowCount == 1) {
         $_SESSION['authenticated'] = true;
         $_SESSION['username'] = $username;
