@@ -93,7 +93,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td style="width: 10px"></td>
                         <td><button onclick="<?php viewTask($project)?>">View Task</button></td>
                         <td style="width: 10px"></td>
-                        <td><button onclick="<?php deleteTask($project)?>">Remove Task</button></td>
+                        <td><button onclick="<?php removeTask($project)?>">Remove Task</button></td>
                     </tr>
                     <?php
                 }
