@@ -1,5 +1,26 @@
 <?php
 session_start();
+require "../../database/dbConnect.php";
+$taskName = strip_tags($_POST['taskName']);
+$desc     = strip_tags($_POST['desc']);
+$deadline = strip_tags($_POST['deadline']);
+$assignee = strip_tags($_POST['assignee']);
+$username = $_SESSION['username'];
+$project = $_SESSION['project'];
+
+if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_POST['assignee'])) {
+    $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk) 
+                                                    VALUES (
+                                                            '$taskName', 
+                                                            '$desc', 
+                                                            '$deadline', 
+                                                            '$assignee', 
+                                                            current_date, 
+                                                            '$username', 
+                                                            (SELECT project_pk FROM project WHERE project_name='$project')
+                                                            );");
+}
+
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();

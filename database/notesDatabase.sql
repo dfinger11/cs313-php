@@ -17,9 +17,7 @@ CREATE TABLE family (
 CREATE TABLE project (
     project_pk SERIAL   NOT NULL PRIMARY KEY,
     project_name        TEXT NOT NULL  UNIQUE,
-    has_deadline        BOOLEAN,
     deadline            DATE,
-    is_completed        BOOLEAN NOT NULL,
     date_completed      DATE,
     date_created        DATE NOT NULL DEFAULT current_date,
     created_by          TEXT NOT NULL DEFAULT current_user,
@@ -32,8 +30,6 @@ CREATE TABLE task (
     task_description    TEXT,
     has_task_deadline   BOOLEAN,
     task_deadline       DATE,
-    is_completed        BOOLEAN NOT NULL,
-    is_assigned         BOOLEAN NOT NULL,
     assignee            TEXT,
     date_completed      DATE,
     completed_by        TEXT,
@@ -125,3 +121,5 @@ UPDATE famusers SET family_fk =(SELECT family_pk FROM family WHERE family_name =
 INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('Test', current_date, current_user, 7);
 
 DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project');
+
+INSERT INTO task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk)VALUES ('$taskName','$desc','$deadline','$assignee',current_date,'$username',(SELECT project_pk FROM project WHERE project_name='$project'));

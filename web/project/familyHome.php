@@ -39,6 +39,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     </div>
     <div class="content">
         <button onclick="location.href = 'addProject.php';">Create Project</button>
+        <br>
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
@@ -82,7 +83,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <br>
         <?php
-        $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_pk FROM family WHERE family_name='$famName');");
+        $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
         $projectStatement->execute();
         if($projectStatement->rowCount() > 0) {
 
