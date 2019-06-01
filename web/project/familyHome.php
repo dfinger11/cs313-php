@@ -36,6 +36,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                                                     SELECT family_fk FROM famusers WHERE username='$username');");
         $memberStatment->execute();
         ?>
+        <br>
         <table>
             <thead><?php echo "The $famName Family"?></thead>
             <tr>
@@ -75,20 +76,30 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     <th style="width: 10px"></th>
                     <th>Deadline</th>
                     <th style="width: 10px"></th>
+                    <th>Is Completed</th>
+                    <th style="width: 10px"></th>
+                    <th>Created By</th>
+                    <th style="width: 10px"></th>
                     <th>Date Created</th>
                 </tr>
                 <?php
-                while ($memberRow = &$memberStatment->fetch(PDO::FETCH_ASSOC)) {
-                    $fname = $memberRow['fname'];
-                    $lname = $memberRow['lname'];
-                    $title = $memberRow['family_title'];
+                while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
+                    $project = $projectRow['project_name'];
+                    $deadline = $projectRow['deadline'];
+                    $isCompleted = $projectRow['is_completed'];
+                    $dateCreated = $projectRow['date_created'];
+                    $createdBy = $projectRow['created_by'];
                     ?>
                     <tr>
-                        <td><?php echo "$fname" ?></td>
+                        <td><?php echo "$project" ?></td>
                         <td style="width: 10px"></td>
-                        <td><?php echo "$lname" ?></td>
+                        <td><?php echo "$deadline" ?></td>
                         <td style="width: 10px"></td>
-                        <td><?php echo "$title" ?></td>
+                        <td><?php echo "$isCompleted" ?></td>
+                        <td style="width: 10px"></td>
+                        <td><?php echo "$createdBy" ?></td>
+                        <td style="width: 10px"></td>
+                        <td><?php echo "$dateCreated" ?></td>
                     </tr>
                     <?php
                 }
