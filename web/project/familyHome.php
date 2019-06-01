@@ -5,7 +5,7 @@ require "../../database/dbConnect.php";
 //view project function
 function viewProject($projectName) {
     $_SESSION['project'] = $projectName;
-    //header("Location: projectView.php");
+    header("Location: projectView.php");
 }
 
 function removeProject($projectName) {
@@ -14,7 +14,7 @@ function removeProject($projectName) {
     $deleteStatement->execute();
     $deleteStatement = $db->prepare("DELETE FROM project WHERE project_name='$projectName';");
     $deleteStatement->execute();
-    //header("Location: familyHome.php");
+    header("Location: familyHome.php");
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
@@ -38,6 +38,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <h2 class="textHeader3">Here you can see all the members of your family</h2>
     </div>
     <div class="content">
+        <button onclick="location.href = 'addProject.php';">Create Project</button>
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (

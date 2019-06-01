@@ -4,14 +4,14 @@ require "../../database/dbConnect.php";
 $project = $_SESSION['project'];
 
 //view project function
-function viewTask($projectName) {
-    $_SESSION['project'] = $projectName;
+function viewTask($taskName) {
+    $_SESSION['project'] = $taskName;
     header("Location: projectView.php");
 }
 
-function removeTask($projectName) {
+function removeTask($taskName) {
     $db = get_db();
-    $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$projectName');");
+    $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$taskName');");
     $deleteStatement->execute();
     header("Location: projectView.php");
 }
@@ -37,6 +37,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <h2 class="textHeader3">Here you can see all the tasks in your project</h2>
     </div>
     <div class="content">
+        <button onclick="location.href = 'addTask.php';">Create Task</button>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project');");
         $projectStatement->execute();
@@ -91,9 +92,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td style="width: 10px"></td>
                         <td><?php echo "$dateCreated" ?></td>
                         <td style="width: 10px"></td>
-                        <td><button onclick="<?php viewTask($project)?>">View Task</button></td>
+                        <td><button onclick="<?php viewTask($taskName)?>">View Task</button></td>
                         <td style="width: 10px"></td>
-                        <td><button onclick="<?php removeTask($project)?>">Remove Task</button></td>
+                        <td><button onclick="<?php removeTask($taskName)?>">Remove Task</button></td>
                     </tr>
                     <?php
                 }
