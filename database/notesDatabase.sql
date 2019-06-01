@@ -109,13 +109,6 @@ INSERT INTO family (family_name) VALUES (
 -- Select user --
 SELECT * FROM famusers WHERE username='DarthVader' AND password_hash = 'VaderRocks';
 
--- Get family name --
-SELECT family_name from family WHERE family_pk=(
-    SELECT DISTINCT ON (family_fk) family_fk FROM familymember WHERE user_pk=(
-        SELECT user_pk FROM famusers WHERE username='DarthVader'
-        )
-    );
-
 -- get family members --
 SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='DarthVader');
 -------------------------------------------------------------------------------------
@@ -128,3 +121,5 @@ ALTER TABLE famusers ADD COLUMN family_fk INT REFERENCES family(family_pk);
 UPDATE famusers SET family_fk = 1 WHERE username = 'DarthVader';
 
 UPDATE famusers SET family_fk =(SELECT family_pk FROM family WHERE family_name ='') WHERE username = '';
+
+INSERT INTO project (project_name, has_deadline, is_completed, date_created, created_by, family_fk) VALUES ('Test', false, false, current_date, current_user, 7);

@@ -63,6 +63,41 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         ?>
         </table>
         <?php
+        $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_pk FROM family WHERE family_name='$famName');");
+        $projectStatement->execute();
+        if($projectStatement->rowCount() > 0) {
+
+            ?>
+            <table>
+                <thead>Your Families Projects</thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th style="width: 10px"></th>
+                    <th>Deadline</th>
+                    <th style="width: 10px"></th>
+                    <th>Date Created</th>
+                </tr>
+                <?php
+                while ($memberRow = &$memberStatment->fetch(PDO::FETCH_ASSOC)) {
+                    $fname = $memberRow['fname'];
+                    $lname = $memberRow['lname'];
+                    $title = $memberRow['family_title'];
+                    ?>
+                    <tr>
+                        <td><?php echo "$fname" ?></td>
+                        <td style="width: 10px"></td>
+                        <td><?php echo "$lname" ?></td>
+                        <td style="width: 10px"></td>
+                        <td><?php echo "$title" ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </table>
+            <?php
+        } else {
+            ?><span><?php echo "Looks like you don't have any projects."?></span><?php
+        }
         ?>
     </div>
     <div class="footer">
