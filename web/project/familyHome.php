@@ -5,14 +5,14 @@ require "../../database/dbConnect.php";
 //view project function
 function viewProject($projectName) {
     $_SESSION['project'] = $projectName;
-    header("Location: projectView.php");
+    //header("Location: projectView.php");
 }
 
 function removeProject($projectName) {
     $db = get_db();
     $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$projectName');");
     $deleteStatement->execute();
-    header("Location: familyHome.php");
+    //header("Location: familyHome.php");
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
