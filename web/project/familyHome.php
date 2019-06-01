@@ -1,6 +1,20 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+
+//view project function
+function viewProject($projectName) {
+    $_SESSION['project'] = $projectName;
+    header("Location: projectView.php");
+}
+
+function removeProject($projectName) {
+    $db = get_db();
+    $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$projectName');");
+    $deleteStatement->execute();
+    header("Location: familyHome.php");
+}
+
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
@@ -82,6 +96,10 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     <th>Created By</th>
                     <th style="width: 10px"></th>
                     <th>Date Created</th>
+                    <th style="width: 10px"></th>
+                    <th>View Project</th>
+                    <th style="width: 10px"></th>
+                    <th>Delete Project</th>
                 </tr>
                 <?php
                 while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
@@ -106,6 +124,10 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td><?php echo "$createdBy" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$dateCreated" ?></td>
+                        <td style="width: 10px"></td>
+                        <td><button onclick="<?php viewProject($project)?>">View Project</button></td>
+                        <td style="width: 10px"></td>
+                        <td><button onclick="<?php deleteProject($project)?>">Remove Project</button></td>
                     </tr>
                     <?php
                 }
