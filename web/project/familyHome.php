@@ -87,9 +87,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
                     $project = $projectRow['project_name'];
                     $deadline = $projectRow['deadline'];
-                    if($projectRow['is_completed'] == 't') {
+                    if($projectRow['date_completed'] != null) {
                         $isCompleted = true;
-                    } else if ($projectRow['is_completed'] == 'f') {
+                    } else {
                         $isCompleted = false;
                     }
 
