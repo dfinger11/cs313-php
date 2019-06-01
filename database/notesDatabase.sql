@@ -122,6 +122,6 @@ UPDATE famusers SET family_fk = 1 WHERE username = 'DarthVader';
 
 UPDATE famusers SET family_fk =(SELECT family_pk FROM family WHERE family_name ='') WHERE username = '';
 
-INSERT INTO project (project_name, has_deadline, is_completed, date_created, created_by, family_fk) VALUES ('Test', false, false, current_date, current_user, 7);
+INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('Test', current_date, current_user, 7);
 
 DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project');

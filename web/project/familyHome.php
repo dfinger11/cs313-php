@@ -12,6 +12,8 @@ function removeProject($projectName) {
     $db = get_db();
     $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$projectName');");
     $deleteStatement->execute();
+    $deleteStatement = $db->prepare("DELETE FROM project WHERE project_name='$projectName';");
+    $deleteStatement->execute();
     //header("Location: familyHome.php");
 }
 
