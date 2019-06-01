@@ -77,7 +77,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     <th style="width: 10px"></th>
                     <th>Deadline</th>
                     <th style="width: 10px"></th>
-                    <th>Is Completed</th>
+                    <th>Date Completed</th>
                     <th style="width: 10px"></th>
                     <th>Created By</th>
                     <th style="width: 10px"></th>
@@ -88,9 +88,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     $project = $projectRow['project_name'];
                     $deadline = $projectRow['deadline'];
                     if($projectRow['date_completed'] != null) {
-                        $isCompleted = true;
+                        $dateCompleted = $projectRow['date_completed'];
                     } else {
-                        $isCompleted = false;
+                        $dateCompleted = 'Not Completed';
                     }
 
                     $dateCreated = $projectRow['date_created'];
@@ -101,7 +101,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td style="width: 10px"></td>
                         <td><?php echo "$deadline" ?></td>
                         <td style="width: 10px"></td>
-                        <td><?php echo "$isCompleted" ?></td>
+                        <td><?php echo "$dateCompleted" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$createdBy" ?></td>
                         <td style="width: 10px"></td>
