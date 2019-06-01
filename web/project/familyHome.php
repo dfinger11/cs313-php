@@ -63,6 +63,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         }
         ?>
         </table>
+        <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_pk FROM family WHERE family_name='$famName');");
         $projectStatement->execute();
@@ -86,7 +87,12 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
                     $project = $projectRow['project_name'];
                     $deadline = $projectRow['deadline'];
-                    $isCompleted = $projectRow['is_completed'];
+                    if($projectRow['is_completed'] == 't') {
+                        $isCompleted = true;
+                    } else if ($projectRow['is_completed'] == 'f') {
+                        $isCompleted = false;
+                    }
+
                     $dateCreated = $projectRow['date_created'];
                     $createdBy = $projectRow['created_by'];
                     ?>
