@@ -120,7 +120,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 }
                 ?>
             </table>
-            <form action="deleteProjectForm.php" method="post">
+            <form action="deleteProject.php" method="post">
                 <h3>Delete Project</h3>
                 Name of Project to be deleted: <input type="text" name="deadProject">
                 <button type="submit">Delete Project</button>
