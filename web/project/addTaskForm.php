@@ -3,7 +3,15 @@ session_start();
 require "../../database/dbConnect.php";
 $taskName = strip_tags($_POST['taskName']);
 $desc     = strip_tags($_POST['desc']);
-$deadline = strip_tags($_POST['deadline']);
+$month = strip_tags($_POST['month']);
+$day = strip_tags($_POST['day']);
+$year = strip_tags($_POST['year']);
+$date = $year . '-' . $month . '-' . $day;
+if($date == "--" || $day == "" || $month == "" || $year == "") {
+    $deadline = null;
+} else {
+    $deadline = $date;
+}
 $assignee = strip_tags($_POST['assignee']);
 $username = $_SESSION['username'];
 $project = $_SESSION['project'];
@@ -48,7 +56,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <br>
             <span style="color: red">*</span>Task Description: <textarea name="desc"></textarea>
             <br>
-            Task Deadline: <input type="date" name="deadline">
+            Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
             <br>
             <span style="color: red">*</span>Task Assignment:
             <select name="assignee">
