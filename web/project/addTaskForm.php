@@ -7,6 +7,7 @@ $deadline = strip_tags($_POST['deadline']);
 $assignee = strip_tags($_POST['assignee']);
 $username = $_SESSION['username'];
 $project = $_SESSION['project'];
+$db = get_db();
 
 if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_POST['assignee'])) {
     $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk) 
