@@ -6,8 +6,8 @@ $projectName = strip_tags($_POST['projectName']);
 $month = strip_tags($_POST['month']);
 $day = strip_tags($_POST['day']);
 $year = strip_tags($_POST['year']);
-$date = $year . '-' . $month . '-' . $day;
-if($date == "--" || day == "" || month == "" || year == "") {
+$date = $year . '/' . $month . '/' . $day;
+if($date == "//" || day == "" || month == "" || year == "") {
     $deadline = null;
 } else {
     try {
@@ -18,11 +18,11 @@ if($date == "--" || day == "" || month == "" || year == "") {
 $username = $_SESSION['username'];
 
 if("" != trim($_POST['projectName'])) {
+    $db = get_db();
     if(empty($deadline) || $deadline == null || $deadline == "") {
-        $insertStatement = get_db()->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
-        //header("Location: familyHome.php");
+        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
     } else {
-        $insertStatement = get_db()->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
+        $insertStatement = $db->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
                                                             '$projectName', 
                                                             '$deadline', 
@@ -30,8 +30,8 @@ if("" != trim($_POST['projectName'])) {
                                                             '$username', 
                                                             (SELECT family_fk FROM famusers WHERE username='$username')
                                                             );");
-        //header("Location: familyHome.php");
     }
+    //header("Location: familyHome.php");
     echo $username;
 }
 
