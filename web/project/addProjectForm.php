@@ -16,9 +16,9 @@ $username = $_SESSION['username'];
 
 if("" != trim($_POST['projectName'])) {
     if(empty($deadline) || $deadline == null || $deadline == "") {
-        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
+        $insertStatement = get_db()->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
     } else {
-        $insertStatement = $db->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
+        $insertStatement = get_db()->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
                                                             '$projectName', 
                                                             '$deadline', 
