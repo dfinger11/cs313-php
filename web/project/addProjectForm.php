@@ -1,19 +1,18 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+
 $projectName = strip_tags($_POST['projectName']);
-$deadline = strip_tags($_POST['deadline']);
+$month = strip_tags($_POST['month']);
+$day = strip_tags($_POST['day']);
+$year = strip_tags($_POST['year']);
+$date = $year . '-' . $month . '-' . $day;
+$deadline = new DateTime($date);
 $username = $_SESSION['username'];
 
 if("" != trim($_POST['projectName'])) {
     if(empty($deadline) || $deadline = null || $deadline = "") {
-        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) 
-                                                    VALUES (
-                                                            '$projectName', 
-                                                            current_date, 
-                                                            '$username', 
-                                                            (SELECT family_fk FROM famusers WHERE username='$username')
-                                                            );");
+        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
     } else {
         $insertStatement = $db->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
@@ -54,7 +53,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             ?>
             <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
             <br>
-            Project Deadline: <input type="date" name="deadline">
+            Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
             <br>
             <input type="submit">
         </form>
