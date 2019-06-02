@@ -6,8 +6,8 @@ $project = strip_tags($_POST['projectName']);
 $month = strip_tags($_POST['month']);
 $day = strip_tags($_POST['day']);
 $year = strip_tags($_POST['year']);
-$date = $year . '/' . $month . '/' . $day;
-if($date == "//" || day == "" || month == "" || year == "") {
+$date = $year . '-' . $month . '-' . $day;
+if($date == "--" || $day == "" || $month == "" || $year == "") {
     $deadline = null;
 } else {
     try {
