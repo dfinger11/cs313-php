@@ -16,7 +16,7 @@ CREATE TABLE family (
 
 CREATE TABLE project (
     project_pk SERIAL   NOT NULL PRIMARY KEY,
-    project_name        TEXT NOT NULL  UNIQUE,
+    project_name        TEXT NOT NULL,
     deadline            DATE,
     date_completed      DATE,
     date_created        DATE NOT NULL DEFAULT current_date,
@@ -26,7 +26,7 @@ CREATE TABLE project (
 
 CREATE TABLE task (
     task_pk SERIAL      NOT NULL PRIMARY KEY,
-    task_title          TEXT NOT NULL  UNIQUE,
+    task_title          TEXT NOT NULL,
     task_description    TEXT,
     has_task_deadline   BOOLEAN,
     task_deadline       DATE,
