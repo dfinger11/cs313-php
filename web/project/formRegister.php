@@ -81,7 +81,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
             if($userExists == true) {
                 ?><span style="color: red"><?php echo "Username already exists!"?></span><br><?php
             }else if("" == trim($_POST['username'])) {
-                ?><span style="color: red"><?php echo "Username can be blank!"?></span><br><?php
+                ?><span style="color: red"><?php echo "Username can't be blank!"?></span><br><?php
             }
             ?>
             New Username: <input type="text" name="username">

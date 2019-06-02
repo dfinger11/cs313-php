@@ -2,20 +2,6 @@
 session_start();
 require "../../database/dbConnect.php";
 
-//view project function
-function viewProject($projectName) {
-    $_SESSION['project'] = $projectName;
-    header("Location: projectView.php");
-}
-
-function removeProject($projectName) {
-    $db = get_db();
-    $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$projectName');");
-    $deleteStatement->execute();
-    $deleteStatement = $db->prepare("DELETE FROM project WHERE project_name='$projectName';");
-    $deleteStatement->execute();
-    header("Location: familyHome.php");
-}
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
@@ -38,8 +24,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <h2 class="textHeader3">Here you can see all the members of your family</h2>
     </div>
     <div class="content">
-        <button onclick="location.href = 'addProject.php';">Create Project</button>
-        <br>
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
@@ -82,6 +66,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         ?>
         </table>
         <br>
+        <br>
+        <button onclick="location.href = 'addProject.php';">New Project</button>
+        <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
         $projectStatement->execute();
@@ -118,7 +105,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     $dateCreated = $projectRow['date_created'];
                     $createdBy = $projectRow['created_by'];
                     ?>
-                    <tr>
+                    <tr onclick="<?php viewProject($project)?>">
                         <td><?php echo "$project" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$deadline" ?></td>
@@ -128,18 +115,25 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td><?php echo "$createdBy" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$dateCreated" ?></td>
-                        <td style="width: 10px"></td>
-                        <td><button onclick="<?php viewProject($project)?>">View Project</button></td>
-                        <td style="width: 10px"></td>
-                        <td><button onclick="<?php removeProject($project)?>">Remove Project</button></td>
                     </tr>
                     <?php
                 }
                 ?>
             </table>
+            <form action="deleteProjectForm.php" method="post">
+                <h3>Delete Project</h3>
+                Name of Project to be deleted: <input type="text" name="deadProject">
+                <button type="submit">Delete Project</button>
+            </form>
             <?php
         } else {
-            ?><span><?php echo "Looks like you don't have any projects."?></span><?php
+            ?><span><?php echo "Looks like you don't have any projects."?></span>
+            <form action="deleteProjectForm.php" method="post">
+                <h3>Delete Project</h3>
+                Name of Project to be deleted: <input type="text" name="deadProject">
+                <button type="submit">Delete Project</button>
+            </form>
+            <?php
         }
         ?>
     </div>
