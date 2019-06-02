@@ -2,7 +2,7 @@
 session_start();
 require "../../database/dbConnect.php";
 
-$projectName = strip_tags($_POST['projectName']);
+$project = strip_tags($_POST['projectName']);
 $month = strip_tags($_POST['month']);
 $day = strip_tags($_POST['day']);
 $year = strip_tags($_POST['year']);
@@ -20,19 +20,25 @@ $username = $_SESSION['username'];
 if("" != trim($_POST['projectName'])) {
     $db = get_db();
     if(empty($deadline) || $deadline == null || $deadline == "") {
-        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
-    } /*else {
+        $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) 
+                                                    VALUES (
+                                                            '$project', 
+                                                            current_date, 
+                                                            '$username', 
+                                                            (SELECT family_fk FROM famusers WHERE username='$username')
+                                                            );");
+    } else {
         $insertStatement = $db->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
-                                                            '$projectName', 
+                                                            '$project', 
                                                             '$deadline', 
                                                             current_date, 
                                                             '$username', 
                                                             (SELECT family_fk FROM famusers WHERE username='$username')
                                                             );");
-    }*/
-    //header("Location: familyHome.php");
-    echo $username;
+    }
+    $insertStatement->execute();
+    header("Location: familyHome.php");
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {

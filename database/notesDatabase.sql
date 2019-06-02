@@ -123,3 +123,5 @@ INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES (
 DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project');
 
 INSERT INTO task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk)VALUES ('$taskName','$desc','$deadline','$assignee',current_date,'$username',(SELECT project_pk FROM project WHERE project_name='$project'));
+
+INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('test', current_date, 'DarthVader', (SELECT family_fk FROM famusers WHERE username='DarthVader'));
