@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "../../database/dbConnect.php";
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
