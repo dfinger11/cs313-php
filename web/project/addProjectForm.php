@@ -32,7 +32,7 @@ if("" != trim($_POST['projectName'])) {
                                                             );");
         //header("Location: familyHome.php");
     }
-    echo $projectName;
+    echo $username;
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
