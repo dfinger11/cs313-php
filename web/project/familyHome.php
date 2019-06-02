@@ -8,7 +8,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $db = get_db();
 
     //view project function
-    function viewTask($projectName) {
+    function viewProject($projectName) {
         $_SESSION['project'] = $projectName;
         header("Location: projectView.php");
     }
