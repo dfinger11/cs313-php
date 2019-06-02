@@ -20,7 +20,7 @@ $username = $_SESSION['username'];
 if("" != trim($_POST['projectName'])) {
     if(empty($deadline) || $deadline == null || $deadline == "") {
         $insertStatement = get_db()->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
-        header("Location: familyHome.php");
+        //header("Location: familyHome.php");
     } else {
         $insertStatement = get_db()->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
