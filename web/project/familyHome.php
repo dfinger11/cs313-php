@@ -102,7 +102,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     $createdBy = $projectRow['created_by'];
                     ?>
                     <tr>
-                        <td onclick=" <?php $_SESSION['project'] = $project ?> window.location.href = 'viewProject.php';"><?php echo "$project" ?></td>
+                        <td onclick=" <?php $_SESSION['project'] = $project ?> window.location.href = 'projectView.php';"><?php echo "$project" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$deadline" ?></td>
                         <td style="width: 10px"></td>
