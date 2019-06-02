@@ -127,13 +127,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             </form>
             <?php
         } else {
-            ?><span><?php echo "Looks like you don't have any projects."?></span>
-            <form action="deleteProjectForm.php" method="post">
-                <h3>Delete Project</h3>
-                Name of Project to be deleted: <input type="text" name="deadProject">
-                <button type="submit">Delete Project</button>
-            </form>
-            <?php
+            ?><span><?php echo "Looks like you don't have any projects."?></span><?php
         }
         ?>
     </div>

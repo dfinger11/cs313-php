@@ -46,7 +46,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <h1 class="textHeader1">Create Project</h1>
     </div>
     <div class="content">
-        <form action="addTaskForm.php" method="post">
+        <form action="addProjectForm.php" method="post">
             <?php
             if("" == trim($_POST['projectName'])) {
                 ?><span style="color: red"><?php echo "Project name can't be blank!"?></span><br><?php
