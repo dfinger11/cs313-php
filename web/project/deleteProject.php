@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
-$project = $_POST['project'];
+$project = $_POST['deadProject'];
 $checkStatement = get_db()->prepare("SELECT project_name FROM project WHERE project_name='$project';");
 $checkStatement->execute();
 $checkRows = $checkStatement->rowCount();
