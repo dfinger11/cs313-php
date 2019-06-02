@@ -11,7 +11,7 @@ if($date == "//" || day == "" || month == "" || year == "") {
     $deadline = null;
 } else {
     try {
-        $deadline = new DateTime($date);
+        $deadline = new DateTime();
     } catch (Exception $e) {
     }
 }
@@ -21,7 +21,7 @@ if("" != trim($_POST['projectName'])) {
     $db = get_db();
     if(empty($deadline) || $deadline == null || $deadline == "") {
         $insertStatement = $db->prepare("INSERT INTO project (project_name, date_created, created_by, family_fk) VALUES ('$projectName', current_date, '$username', (SELECT family_fk FROM famusers WHERE username='$username'));");
-    } else {
+    } /*else {
         $insertStatement = $db->prepare("INSERT INTO project (project_name, deadline, date_created, created_by, family_fk) 
                                                     VALUES (
                                                             '$projectName', 
@@ -30,7 +30,7 @@ if("" != trim($_POST['projectName'])) {
                                                             '$username', 
                                                             (SELECT family_fk FROM famusers WHERE username='$username')
                                                             );");
-    }
+    }*/
     //header("Location: familyHome.php");
     echo $username;
 }
