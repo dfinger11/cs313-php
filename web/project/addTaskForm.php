@@ -19,6 +19,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$username', 
                                                             (SELECT project_pk FROM project WHERE project_name='$project')
                                                             );");
+    $insertStatement->execute();
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
