@@ -34,7 +34,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 <div class="page">
     <div class="header">
         <h1 class="textHeader1">The Project Room</h1>
-        <h2 class="textHeader3">Here you can see all the tasks in your project</h2>
+        <h2 class="textHeader3">Here you can see all the tasks in your project called <?php echo $project ?></h2>
     </div>
     <div class="content">
         <button onclick="location.href = 'addTask.php';">Create Task</button>
