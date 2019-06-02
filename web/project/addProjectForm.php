@@ -7,10 +7,13 @@ $month = strip_tags($_POST['month']);
 $day = strip_tags($_POST['day']);
 $year = strip_tags($_POST['year']);
 $date = $year . '-' . $month . '-' . $day;
-if($date == "--") {
+if($date == "--" || day == "" || month == "" || year == "") {
     $deadline = null;
 } else {
-    $deadline = new DateTime($date);
+    try {
+        $deadline = new DateTime($date);
+    } catch (Exception $e) {
+    }
 }
 $username = $_SESSION['username'];
 
