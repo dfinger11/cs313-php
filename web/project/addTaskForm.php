@@ -15,6 +15,7 @@ if($date == "--" || $day == "" || $month == "" || $year == "") {
 $assignee = strip_tags($_POST['assignee']);
 $username = $_SESSION['username'];
 $project = $_SESSION['project'];
+$projectPk = $_SESSION['project_pk'];
 $db = get_db();
 
 if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_POST['assignee'])) {
@@ -27,7 +28,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$assignee', 
                                                             current_date, 
                                                             '$username', 
-                                                            (SELECT DISTINCT ON (project_pk) project_pk FROM project WHERE project_name='$project')
+                                                            (SELECT DISTINCT ON (project_pk) project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk')
                                                             );");
     } else {
         $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, assignee, date_added, added_by, project_fk) 
@@ -37,7 +38,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$assignee', 
                                                             current_date, 
                                                             '$username', 
-                                                            (SELECT DISTINCT ON (project_pk) project_pk FROM project WHERE project_name='$project')
+                                                            (SELECT DISTINCT ON (project_pk) project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk')
                                                             );");
     }
 

@@ -2,6 +2,7 @@
 session_start();
 require "../../database/dbConnect.php";
 $project = $_SESSION['project'];
+$projectPk = $_SESSION['project_pk'];
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
@@ -26,7 +27,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <div class="content">
         <button onclick="location.href = 'addTask.php';">Create Task</button>
         <?php
-        $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project');");
+        $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk');");
         $projectStatement->execute();
         if($projectStatement->rowCount() > 0) {
 

@@ -91,6 +91,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <?php
                 while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
                     $project = $projectRow['project_name'];
+                    $projectPk = $projectRow['project_pk'];
                     $deadline = $projectRow['deadline'];
                     if($projectRow['date_completed'] != null) {
                         $dateCompleted = $projectRow['date_completed'];
@@ -102,7 +103,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     $createdBy = $projectRow['created_by'];
                     ?>
                     <tr>
-                        <td onclick=" <?php $_SESSION['project'] = $project ?> window.location.href = 'projectView.php';"><?php echo "$project" ?></td>
+                        <td onclick=" <?php $_SESSION['project'] = $project; $_SESSION['project_pk'] = $projectPk; ?> window.location.href = 'projectView.php';"><?php echo "$project" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$deadline" ?></td>
                         <td style="width: 10px"></td>
