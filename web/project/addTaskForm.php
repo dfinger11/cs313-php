@@ -18,7 +18,8 @@ $project = $_SESSION['project'];
 $db = get_db();
 
 if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_POST['assignee'])) {
-    $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk) 
+    if ($deadline != null) {
+        $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, task_deadline, assignee, date_added, added_by, project_fk) 
                                                     VALUES (
                                                             '$taskName', 
                                                             '$desc', 
@@ -28,6 +29,18 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$username', 
                                                             (SELECT project_pk FROM project WHERE project_name='$project')
                                                             );");
+    } else {
+        $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, assignee, date_added, added_by, project_fk) 
+                                                    VALUES (
+                                                            '$taskName', 
+                                                            '$desc',  
+                                                            '$assignee', 
+                                                            current_date, 
+                                                            '$username', 
+                                                            (SELECT project_pk FROM project WHERE project_name='$project')
+                                                            );");
+    }
+
     $insertStatement->execute();
     header("Location: projectView.php");
 }
