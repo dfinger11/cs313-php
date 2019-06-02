@@ -29,6 +29,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             (SELECT project_pk FROM project WHERE project_name='$project')
                                                             );");
     $insertStatement->execute();
+    header("Location: projectView.php");
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
@@ -52,9 +53,21 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     </div>
     <div class="content">
         <form action="addTaskForm.php" method="post">
+            <?php
+            if ("" != trim($_POST['taskName'])) {
+                ?><span style="color: red"><?php echo "Task name can't be blank!"?></span><br><?php
+            }
+            ?>
             <span style="color: red">*</span>Task Name: <input type="text" name="taskName">
             <br>
-            <span style="color: red">*</span>Task Description: <textarea name="desc"></textarea>
+            <?php
+            if ("" != trim($_POST['taskDesc'])) {
+                ?><span style="color: red"><?php echo "Task description can't be blank!"?></span><br><?php
+            }
+            ?>
+            <span style="color: red">*</span>Task Description:
+            <br>
+            <textarea name="desc"></textarea>
             <br>
             Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
             <br>
