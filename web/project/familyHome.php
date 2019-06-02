@@ -6,6 +6,12 @@ require "../../database/dbConnect.php";
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
+
+    //view project function
+    function viewTask($projectName) {
+        $_SESSION['project'] = $projectName;
+        header("Location: projectView.php");
+    }
     ?>
 
 <!DOCTYPE html>
