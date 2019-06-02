@@ -6,12 +6,6 @@ require "../../database/dbConnect.php";
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
-
-    //view project function
-    function viewProject($projectName) {
-        $_SESSION['project'] = $projectName;
-        header("Location: projectView.php");
-    }
     ?>
 
 <!DOCTYPE html>
@@ -21,7 +15,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <meta name='viewport'
     <title>Family Room</title>
     <link rel='stylesheet' href=''/>
-    <script src=""></script>
+    <script rel=''></script>
 </head>
 <body>
 <div class="page">
@@ -111,8 +105,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     $dateCreated = $projectRow['date_created'];
                     $createdBy = $projectRow['created_by'];
                     ?>
-                    <tr onclick="<?php viewProject($project)?>">
-                        <td><?php echo "$project" ?></td>
+                    <tr>
+                        <td onclick=" <?php $_SESSION['project'] = $project ?> window.location.href = 'viewProject.php';"><?php echo "$project" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$deadline" ?></td>
                         <td style="width: 10px"></td>
