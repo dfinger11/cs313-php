@@ -92,14 +92,17 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td style="width: 10px"></td>
                         <td><?php echo "$dateCreated" ?></td>
                         <td style="width: 10px"></td>
-                        <td><button onclick="<?php viewTask($taskName)?>">View Task</button></td>
-                        <td style="width: 10px"></td>
                         <td><button onclick="<?php removeTask($taskName)?>">Remove Task</button></td>
                     </tr>
                     <?php
                 }
                 ?>
             </table>
+            <form action="deleteTask.php" method="post">
+                <h3>Delete Task</h3>
+                Name of the task to be deleted: <input type="text" name="deadTask">
+                <button type="submit">Delete Project</button>
+            </form>
             <?php
         } else {
             ?><span><?php echo "Looks like you don't have any tasks in this project."?></span><?php

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
-$task = $_POST['task'];
+$task = $_POST['deadTask'];
 $checkStatement = get_db()->prepare("SELECT task_title FROM task WHERE task_title='$task';");
 $checkStatement->execute();
 $checkRows = $checkStatement->rowCount();
