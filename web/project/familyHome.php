@@ -87,10 +87,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     <th>Created By</th>
                     <th style="width: 10px"></th>
                     <th>Date Created</th>
-                    <th style="width: 10px"></th>
-                    <th>View Project</th>
-                    <th style="width: 10px"></th>
-                    <th>Delete Project</th>
                 </tr>
                 <?php
                 while ($projectRow = &$projectStatement->fetch(PDO::FETCH_ASSOC)) {
