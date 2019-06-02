@@ -30,8 +30,9 @@ if("" != trim($_POST['projectName'])) {
                                                             '$username', 
                                                             (SELECT family_fk FROM famusers WHERE username='$username')
                                                             );");
-        header("Location: familyHome.php");
+        //header("Location: familyHome.php");
     }
+    echo $projectName;
 }
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
