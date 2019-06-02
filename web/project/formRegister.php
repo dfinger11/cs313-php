@@ -40,6 +40,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
                                                             '$title'
                                                         );");
     $updateStatement->execute();
+    header("Location: familyHome.php");
 
 } else {
     $insertFamStatement = $db->prepare("INSERT INTO family (family_name) VALUES ('$family');");

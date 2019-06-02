@@ -27,7 +27,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$assignee', 
                                                             current_date, 
                                                             '$username', 
-                                                            (SELECT project_pk FROM project WHERE project_name='$project')
+                                                            (SELECT DISTINCT ON (project_pk) project_pk FROM project WHERE project_name='$project')
                                                             );");
     } else {
         $insertStatement = $db->prepare("INSERT INTO Task (task_title, task_description, assignee, date_added, added_by, project_fk) 
@@ -37,7 +37,7 @@ if("" != trim($_POST['taskName']) && "" != trim($_POST['desc']) && "" != trim($_
                                                             '$assignee', 
                                                             current_date, 
                                                             '$username', 
-                                                            (SELECT project_pk FROM project WHERE project_name='$project')
+                                                            (SELECT DISTINCT ON (project_pk) project_pk WHERE project_name='$project')
                                                             );");
     }
 
