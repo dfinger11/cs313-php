@@ -3,19 +3,6 @@ session_start();
 require "../../database/dbConnect.php";
 $project = $_SESSION['project'];
 
-//view project function
-function viewTask($taskName) {
-    $_SESSION['project'] = $taskName;
-    header("Location: projectView.php");
-}
-
-function removeTask($taskName) {
-    $db = get_db();
-    $deleteStatement = $db->prepare("DELETE FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$taskName');");
-    $deleteStatement->execute();
-    header("Location: projectView.php");
-}
-
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
@@ -91,8 +78,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         <td><?php echo "$createdBy" ?></td>
                         <td style="width: 10px"></td>
                         <td><?php echo "$dateCreated" ?></td>
-                        <td style="width: 10px"></td>
-                        <td><button onclick="<?php removeTask($taskName)?>">Remove Task</button></td>
                     </tr>
                     <?php
                 }
