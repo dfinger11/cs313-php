@@ -10,10 +10,7 @@ $date = $year . '-' . $month . '-' . $day;
 if($date == "--" || $day == "" || $month == "" || $year == "") {
     $deadline = null;
 } else {
-    try {
-        $deadline = new DateTime();
-    } catch (Exception $e) {
-    }
+    $deadline = $date;
 }
 $username = $_SESSION['username'];
 
