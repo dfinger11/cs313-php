@@ -78,7 +78,7 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
     </div>
     <div class="content">
         <h3>Register</h3>
-        <form action="formRegister.php" method="post">
+        <form action="registerForm.php" method="post">
             <?php
             if($userExists == true) {
                 ?><span style="color: red"><?php echo "Username already exists!"?></span><br><?php

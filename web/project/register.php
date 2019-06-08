@@ -32,7 +32,7 @@ session_start();
     </div>
     <div class="section content">
         <h3>Register</h3>
-        <form action="formRegister.php" method="post">
+        <form action="registerForm.php" method="post">
             Username: <input type="text" name="username">
             <br>
             Password: <input type="password" name="password">
