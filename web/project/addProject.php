@@ -18,10 +18,23 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 </head>
 <body>
 <div class="page">
-    <div class="header">
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="accContainer">
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = 'familyHome.php';" class="accordion">Family Room</button>
+            <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
+        </div>
+    </div>
+    <div class="section header">
         <h1 class="textHeader1">Create Project</h1>
     </div>
-    <div class="content">
+    <div class="section content">
         <form action="addProjectForm.php" method="post">
             <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
             <br>
@@ -30,8 +43,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <input type="submit">
         </form>
     </div>
-    <div class="footer">
-
+    <div class="section footer">
+        <p class="footerClass">Derek Finger 2019</p>
     </div>
 </div>
 </body>
