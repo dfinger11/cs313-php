@@ -58,7 +58,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         ?>
         <br>
         <table class="centerContent">
-            <thead><?php echo "The $famName Family"?></thead>
+            <thead class="centerText"><?php echo "The $famName Family"?></thead>
             <tr>
                 <th>First Name</th>
                 <th style="width: 10px"></th>
@@ -145,6 +145,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             ?><p class="centerText"><?php echo "Looks like you don't have any projects."?></p><?php
         }
         ?>
+        <br>
     </div>
     <div class="section footer">
         <p class="footerClass">Derek Finger 2019</p>
