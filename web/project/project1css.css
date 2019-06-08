@@ -96,7 +96,8 @@ h3 {
 }
 
 .menuLeft {
-    float: end;
+    display: flex;
+    align-self: end;
 }
 
 #accContainer {
