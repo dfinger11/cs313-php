@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: lightgray;
 }
 
 h1 {
@@ -72,11 +72,7 @@ h3 {
     font-size: 20px
 }
 
-.loginForm {
-    text-align: center;
-}
-
-.loginText {
+.loginSection {
     text-align: center;
 }
 
