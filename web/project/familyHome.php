@@ -31,7 +31,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
-            <button onclick="location.href = 'addProject.php';">New Project</button>
+            <button onclick="location.href = 'addProject.php';" class="accordion">New Project</button>
         </div>
     </div>
     <div class="section header">
