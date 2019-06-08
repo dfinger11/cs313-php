@@ -9,6 +9,18 @@
     flex-wrap: wrap;
 }
 
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    background-color: black;
+    display: inline;
+}
+
 .header {
     height: auto;
     align-items: inherit;
@@ -28,18 +40,6 @@
     height: auto;
     display: inline;
     text-align: center;
-}
-
-.section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu {
-    background-color: black;
-    display: inline;
 }
 
 #accContainer {
