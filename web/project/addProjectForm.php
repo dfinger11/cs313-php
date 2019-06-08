@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+require "logout.php";
 
 $project = strip_tags($_POST['projectName']);
 $month = strip_tags($_POST['month']);
@@ -55,25 +56,44 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 </head>
 <body>
 <div class="page">
-    <div class="header">
-        <h1 class="textHeader1">Create Project</h1>
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="accContainer">
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = 'familyHome.php';" class="accordion">Family Room</button>
+            <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
+        </div>
     </div>
-    <div class="content">
-        <form action="addProjectForm.php" method="post">
+    <div class="section header">
+        <h1>Create Project</h1>
+        <br>
+    </div>
+    <div class="section content">
+        <div class="centerContent">
+            <form action="addProjectForm.php" method="post">
             <?php
             if("" == trim($_POST['projectName'])) {
                 ?><span style="color: red"><?php echo "Project name can't be blank!"?></span><br><?php
             }
             ?>
-            <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
+                <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
+                <br>
+                <br>
+                Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
+                <br>
+                <br>
+                <input class="button centerContent" type="submit">
+            </form>
             <br>
-            Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
-            <br>
-            <input type="submit">
-        </form>
+        </div>
     </div>
-    <div class="footer">
-
+    <div class="section footer">
+        <p class="footerClass">Derek Finger 2019</p>
     </div>
 </div>
 </body>
