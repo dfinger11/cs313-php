@@ -30,10 +30,11 @@ if(isset($_SESSION['authenticated'])) {
         </div>
     </div>
     <div class="section header">
-        <h1 class="textHeader1">The Family Game Plan</h1>
+        <h1 class="textHeader1">The Family Project Planner</h1>
     </div>
     <div class="section content">
         <h2 class="textHeader3 loginCenter">Designed to help you manage your family projects</h2>
+        <h3 class="textHeader3 loginCenter">Login</h3>
         <div class="centerContent">
             <h4>Login</h4>
             <form action="formLogin.php" method="post">
