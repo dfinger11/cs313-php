@@ -89,7 +89,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             }
             ?>
                 <h4><span class="error">*</span>Task Name:</h4>
-                <br>
                 <input type="text" name="taskName">
                 <br>
             <?php
@@ -97,8 +96,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 ?><span style="color: red"><?php echo "Task description can't be blank!"?></span><br><?php
             }
             ?>
-                <h4><span class="error">*</span>Task Description:</h4>
                 <br>
+                <h4><span class="error">*</span>Task Description:</h4>
                 <textarea name="desc"></textarea>
                 <br>
                 <br>
