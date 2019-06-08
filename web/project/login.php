@@ -46,9 +46,10 @@ if(isset($_SESSION['authenticated'])) {
                 <br>
                 <input type="password" name="password">
                 <br>
-                <input class="button" type="submit" value="Login">
                 <br>
+                <input class="button" type="submit" value="Login">
             </form>
+            <br>
         </div>
         <h3 class="centerText">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
         <br>
