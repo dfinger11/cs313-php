@@ -76,9 +76,9 @@ h3 {
     text-align: center;
 }
 
-.loginSubContent {
+.centerContent {
     margin: auto;
-    width: 50%;
+    width: 100%;
 }
 
 #accContainer {
