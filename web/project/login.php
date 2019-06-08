@@ -34,7 +34,7 @@ if(isset($_SESSION['authenticated'])) {
     </div>
     <div class="section content">
         <h2 class="textHeader3 loginCenter">Designed to help you manage your family projects</h2>
-        <h3 class="textHeader3 loginCenter">Login</h3>
+        <h3 class="textHeader3 centerContent">Login</h3>
         <form class="centerContent" action="formLogin.php" method="post">
             Username:
             <br>
