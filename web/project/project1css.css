@@ -21,6 +21,10 @@ h3 {
     font-size:20px;
 }
 
+form {
+    padding: 5px;
+}
+
 .button {
     background-color: black;
     border: none;
