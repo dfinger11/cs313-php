@@ -72,13 +72,12 @@ h3 {
     font-size: 20px
 }
 
-.loginSection {
+.loginCenter {
     text-align: center;
 }
 
 .loginSubContent {
     margin: auto;
-    text-align: start;
 }
 
 #accContainer {

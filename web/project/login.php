@@ -32,10 +32,9 @@ if(isset($_SESSION['authenticated'])) {
     <div class="section header">
         <h1 class="textHeader1">The Family Game Plan</h1>
     </div>
-    <div class="section content loginSection">
-        <h2 class="textHeader3">Designed to help you manage your family projects</h2>
+    <div class="section content">
+        <h2 class="textHeader3 loginCenter">Designed to help you manage your family projects</h2>
         <div class="loginSubContent">
-            <p>Login</p>
             <form action="formLogin.php" method="post">
                 Username:
                 <br>
@@ -48,7 +47,7 @@ if(isset($_SESSION['authenticated'])) {
                 <input type="submit" value="Login">
             </form>
         </div>
-        <h3>Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
+        <h3 class="loginCenter">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="section footer">
         <p class="footerClass">Derek Finger 2019</p>
