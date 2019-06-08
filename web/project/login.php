@@ -39,11 +39,13 @@ if(isset($_SESSION['authenticated'])) {
             <form action="formLogin.php" method="post">
                 Username:
                 <br>
-                <input class="formItem" type="text" name="username">
+                <input type="text" name="username">
+                <br>
                 <br>
                 Password:
                 <br>
-                <input class="formItem" type="password" name="password">
+                <input type="password" name="password">
+                <br>
                 <br>
                 <input class="button" type="submit" value="Login">
             </form>
