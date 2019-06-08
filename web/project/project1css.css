@@ -1,3 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    height: auto;
+    align-items: inherit;
+    text-align: center;
+    background-color: white;
+}
+
+.content {
+    background-color: white;
+    display: inline-block;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: auto;
+    display: inline;
+    text-align: center;
+}
+
 .section {
     width: 100%;
     display: flex;
