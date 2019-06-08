@@ -35,20 +35,17 @@ if(isset($_SESSION['authenticated'])) {
     <div class="section content">
         <h2 class="textHeader3 loginCenter">Designed to help you manage your family projects</h2>
         <h3 class="textHeader3 loginCenter">Login</h3>
-        <div class="centerContent">
-            <h4>Login</h4>
-            <form action="formLogin.php" method="post">
-                Username:
-                <br>
-                <input type="text" name="username">
-                <br>
-                Password:
-                <br>
-                <input type="password" name="password">
-                <br>
-                <input type="submit" value="Login">
-            </form>
-        </div>
+        <form class="centerContent" action="formLogin.php" method="post">
+            Username:
+            <br>
+            <input type="text" name="username">
+            <br>
+            Password:
+            <br>
+            <input type="password" name="password">
+            <br>
+            <input type="submit" value="Login">
+        </form>
         <h3 class="loginCenter">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="section footer">
