@@ -35,6 +35,7 @@ if(isset($_SESSION['authenticated'])) {
     <div class="section content">
         <h2 class="centerText loginCenter">Designed to help you manage your family projects</h2>
         <div class="centerContent">
+            <br>
             <h3>Login</h3>
             <form action="formLogin.php" method="post">
                 Username:
@@ -48,6 +49,7 @@ if(isset($_SESSION['authenticated'])) {
                 <br>
                 <br>
                 <input class="button" type="submit" value="Login">
+                <br>
             </form>
         </div>
         <h3 class="centerText">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
