@@ -85,7 +85,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <br>
         <div class="centerContent">
-            <button class="button" onclick="location.href = 'addProject.php';">New Project</button>
+            <button class="button alignLeft" onclick="location.href = 'addProject.php';">New Project</button>
         <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
