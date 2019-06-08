@@ -48,8 +48,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 
             ?>
             <h3 class="centerText">Here is the list of all tasks for this project.</h3>
+            <br>
+            <h4>Your Families Projects</h4>
             <table>
-                <thead>Your Families Projects</thead>
                 <tr>
                     <th>Project Name</th>
                     <th style="width: 10px"></th>
@@ -101,9 +102,10 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 ?>
             </table>
             <form action="deleteTask.php" method="post">
+                <br>
                 <h3>Delete Task</h3>
                 Name of the task to be deleted: <input type="text" name="deadTask">
-                <button type="submit">Delete Project</button>
+                <button class="button" type="submit">Delete Project</button>
             </form>
             <?php
         } else {
