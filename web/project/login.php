@@ -36,9 +36,13 @@ if(isset($_SESSION['authenticated'])) {
         <h2 class="textHeader3">Designed to help you manage your family projects</h2>
         <p class="loginText">Login</p>
         <form class="loginForm" action="formLogin.php" method="post">
-            Username: <input type="text" name="username">
+            Username:
             <br>
-            Password: <input type="password" name="password">
+            <input type="text" name="username">
+            <br>
+            Password:
+            <br>
+            <input type="password" name="password">
             <br>
             <input type="submit" value="Login">
         </form>
