@@ -47,7 +47,13 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <br>
                 <textarea name="desc"></textarea>
                 <br>
-                Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
+                Task Deadline:
+                <br>
+                Month <input type="number" maxlength="2"  name="month">
+                <br>
+                Day <input type="number" maxlength="2"  name="day">
+                <br>
+                Year <input type="number" maxlength="4"  name="year">
                 <br>
                 <span class="error">*</span>Task Assignment:
                 <select name="assignee">
