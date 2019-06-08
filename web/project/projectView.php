@@ -117,7 +117,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </div>
     </div>
     <div class="section footer">
-
+        <p class="footerClass">Derek Finger 2019</p>
     </div>
 </div>
 </body>
