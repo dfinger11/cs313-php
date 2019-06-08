@@ -32,15 +32,15 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </div>
     </div>
     <div class="section header">
-        <h1 class="textHeader1">Create Project</h1>
+        <h1>Create Project</h1>
     </div>
-    <div class="section content">
+    <div class="section content centerContent">
         <form action="addProjectForm.php" method="post">
             <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
             <br>
             Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
             <br>
-            <input type="submit">
+            <input class="button" type="submit">
         </form>
     </div>
     <div class="section footer">
