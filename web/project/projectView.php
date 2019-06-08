@@ -49,7 +49,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             ?>
             <h3 class="centerText">Here is the list of all tasks for this project.</h3>
             <br>
-            <h4>Your Families Projects</h4>
+            <h3>Your Families Projects</h3>
             <table>
                 <tr>
                     <th>Project Name</th>
