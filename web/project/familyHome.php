@@ -30,7 +30,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <div id="accContainer">
             <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
-            <button onclick="location.href = '?logOut=<?php echo($i); ?>';" class="accordion">Logout</button>
+            <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
         </div>
     </div>
     <div class="header">
