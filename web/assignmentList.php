@@ -40,6 +40,7 @@
         <br>
         <div class="assignments">
             <button onclick="location.href = 'assignments/prove3/browsingPage.php';" id="homeButton"><h3>Prove 3: Shopping Cart</h3></button>
+            <br>
             <button onclick="location.href = 'project/familyHome.php';" id="homeButton"><h3>Project1: Family Project Planner</h3></button>
         </div>
         <br>

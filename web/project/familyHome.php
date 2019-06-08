@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+require "logout.php";
 
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
@@ -20,6 +21,18 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 </head>
 <body>
 <div class="page">
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="accContainer">
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = '?logOut=<?php echo($i); ?>';" class="accordion">Logout</button>
+        </div>
+    </div>
     <div class="header">
         <h1 class="textHeader1">The Family Room</h1>
         <h2 class="textHeader3">Here you can see all the members of your family</h2>
