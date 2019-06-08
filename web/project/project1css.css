@@ -76,6 +76,10 @@ h3 {
     text-align: center;
 }
 
+.loginSubContent {
+    text-align: start;
+}
+
 #accContainer {
     display: none;
 }
