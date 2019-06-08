@@ -32,6 +32,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
         </div>
+        <button class="button" onclick="location.href = 'addProject.php';">New Project</button>
     </div>
     <div class="section header">
         <h1 class="centerText">The Family Project Planner</h1>
@@ -85,7 +86,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <br>
         <div class="centerContent">
-            <button class="button alignLeft" onclick="location.href = 'addProject.php';">New Project</button>
         <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
@@ -138,7 +138,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             </table>
             <br>
             <form action="deleteProject.php" method="post">
-                <h3>Delete Project</h3>
+                <h4>Delete Project</h4>
                 Name of Project to be deleted: <input type="text" name="deadProject">
                 <button class="button" type="submit">Delete Project</button>
             </form>

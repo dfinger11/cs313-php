@@ -95,10 +95,6 @@ h3 {
     margin: 0 auto;
 }
 
-.alignLeft {
-    align-items: end;
-}
-
 #accContainer {
     display: none;
 }
