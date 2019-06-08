@@ -97,7 +97,8 @@ h3 {
 
 .menuLeft {
     position: absolute;
-    align-self: end;
+    margin: auto;
+    width: 100%;
 }
 
 #accContainer {
