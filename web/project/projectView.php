@@ -114,6 +114,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         ?>
             <br>
             <h4 class="centerText"><?php echo "To add a task open the menu and click \"Create Task\""?></h4>
+            <br>
         </div>
     </div>
     <div class="section footer">
