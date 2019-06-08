@@ -56,6 +56,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 Year <input type="number" maxlength="4"  name="year">
                 <br>
                 <span class="error">*</span>Task Assignment:
+                <br>
                 <select name="assignee">
                     <?php
                     $memberStatement = $db->prepare("SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
