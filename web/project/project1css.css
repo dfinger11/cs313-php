@@ -21,10 +21,6 @@ h3 {
     font-size:20px;
 }
 
-.textHeader3 {
-    text-align: center;
-}
-
 .page {
     display: flex;
     flex-wrap: wrap;

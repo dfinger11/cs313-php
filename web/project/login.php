@@ -33,8 +33,8 @@ if(isset($_SESSION['authenticated'])) {
         <h1 class="textHeader1">The Family Project Planner</h1>
     </div>
     <div class="section content">
-        <h2 class="textHeader3 loginCenter">Designed to help you manage your family projects</h2>
-        <h3 class="centerContent">Login</h3>
+        <h2 class="centerText loginCenter">Designed to help you manage your family projects</h2>
+        <h3 class="centerText">Login</h3>
         <form class="centerContent" action="formLogin.php" method="post">
             Username:
             <br>
