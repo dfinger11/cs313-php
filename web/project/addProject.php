@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+require "logout.php";
 
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
@@ -40,7 +41,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <form action="addProjectForm.php" method="post">
                 <span style="color: red">*</span>Project Name: <input type="text" name="projectName">
                 <br>
-                Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
+                <br>
+                 Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
                 <br>
                 <br>
                 <input class="button centerContent" type="submit">
