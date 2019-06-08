@@ -31,8 +31,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
+            <button onclick="location.href = 'addProject.php';">New Project</button>
         </div>
-        <button class="button menuLeft" onclick="location.href = 'addProject.php';">New Project</button>
     </div>
     <div class="section header">
         <h1 class="centerText">The Family Project Planner</h1>
@@ -144,7 +144,11 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             </form>
             <?php
         } else {
-            ?><p class="centerText"><?php echo "Looks like you don't have any projects."?></p><?php
+            ?>
+            <p class="centerText"><?php echo "Looks like you don't have any projects."?></p>
+            <br>
+            <pclass="centerText"><?php echo "To add a project open the menu and click \"New Project\""?></p>
+            <?php
         }
         ?>
         <br>
