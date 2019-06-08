@@ -109,10 +109,10 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         } else {
             ?>
                 <h3 class="centerText"><?php echo "Looks like you don't have any tasks in this project."?></h3>
-                <h4 class="centerText"><?php echo "To add a task open the menu and click \"Create Task\""?></h4>
                 <?php
         }
         ?>
+            <h4 class="centerText"><?php echo "To add a task open the menu and click \"Create Task\""?></h4>
         </div>
     </div>
     <div class="section footer">
