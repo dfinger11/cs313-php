@@ -64,10 +64,11 @@ if (!empty($rowCountUser) && $rowCountUser == 1) {
 <html lang='en'>
 <head>
     <meta charset='UTF-8'/>
-    <meta name='viewport'
     <title>Family Game Plan Login</title>
-    <link rel='stylesheet' href=''/>
-    <script src=""></script>
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel='stylesheet' href='project1css.css'/>
+    <script src="project1js.js"></script>
 </head>
 <body>
 <div class="page">

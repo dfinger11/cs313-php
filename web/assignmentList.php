@@ -19,7 +19,6 @@
         <div id="accContainer">
             <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
-            <button onclick="location.href = 'project/familyHome.php';" class="accordion">Project1: Family Project Planner</button>
         </div>
     </div>
     <div class='section header'>
@@ -41,6 +40,7 @@
         <br>
         <div class="assignments">
             <button onclick="location.href = 'assignments/prove3/browsingPage.php';" id="homeButton"><h3>Prove 3: Shopping Cart</h3></button>
+            <button onclick="location.href = 'project/familyHome.php';" id="homeButton"><h3>Project1: Family Project Planner</h3></button>
         </div>
         <br>
     </div>

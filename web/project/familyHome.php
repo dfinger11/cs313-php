@@ -12,10 +12,11 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 <html lang='en'>
 <head>
     <meta charset='UTF-8'/>
-    <meta name='viewport'
     <title>Family Room</title>
-    <link rel='stylesheet' href=''/>
-    <script rel=''></script>
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel='stylesheet' href='project1css.css'/>
+    <script src="project1js.js"></script>
 </head>
 <body>
 <div class="page">
