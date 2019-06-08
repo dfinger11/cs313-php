@@ -97,11 +97,10 @@ h3 {
 
 .menuLeft {
     position: absolute;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    width: 100%;
+    top:50%;
+    right: 0;
+    width: 120px;
+    transform: translateY(-50%);
 }
 
 #accContainer {
