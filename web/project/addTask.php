@@ -48,15 +48,14 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <textarea name="desc"></textarea>
                 <br>
                 <h4>Task Deadline:</h4>
-                <br>
                 <h4>Month</h4> <input type="number" maxlength="2"  name="month">
                 <br>
                 <h4>Day</h4> <input type="number" maxlength="2"  name="day">
                 <br>
                 <h4>Year</h4> <input type="number" maxlength="4"  name="year">
                 <br>
-                <h4><span class="error">*</span>Task Assignment:</h4>
                 <br>
+                <h4><span class="error">*</span>Task Assignment:</h4>
                 <select name="assignee">
                     <?php
                     $memberStatement = $db->prepare("SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
