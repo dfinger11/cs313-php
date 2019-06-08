@@ -64,7 +64,7 @@ if (!empty($rowCount) && $rowCount == 1) {
         if($_SESSION['authenticated'] == true) {
             header("Location: familyHome.php");
         } else {
-            ?><span class="centerText" style="color: red"><?php echo "Username or password is incorrect!"?></span><br><?php
+            ?><p class="centerText error"><?php echo "Username or password is incorrect!"?></p><br><?php
         }
         ?>
         <h3 class="centerText">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
