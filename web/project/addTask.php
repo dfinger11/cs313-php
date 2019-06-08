@@ -49,11 +49,11 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <br>
                 <h4>Task Deadline:</h4>
                 <br>
-                <h4>Month <input type="number" maxlength="2"  name="month"></h4>
+                <h4>Month</h4> <input type="number" maxlength="2"  name="month">
                 <br>
-                <h4>Day <input type="number" maxlength="2"  name="day"></h4>
+                <h4>Day</h4> <input type="number" maxlength="2"  name="day">
                 <br>
-                <h4>Year <input type="number" maxlength="4"  name="year"></h4>
+                <h4>Year</h4> <input type="number" maxlength="4"  name="year">
                 <br>
                 <h4><span class="error">*</span>Task Assignment:</h4>
                 <br>
