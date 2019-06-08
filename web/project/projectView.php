@@ -21,11 +21,24 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 </head>
 <body>
 <div class="page">
-    <div class="header">
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="accContainer">
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = 'familyHome.php';" class="accordion">Family Room</button>
+            <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
+        </div>
+    </div>
+    <div class="section header">
         <h1 class="textHeader1">The Project Room</h1>
         <h2 class="textHeader3">Here you can see all the tasks in your project called <?php echo $project ?></h2>
     </div>
-    <div class="content">
+    <div class="section content">
         <button onclick="location.href = 'addTask.php';">Create Task</button>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk');");
@@ -96,7 +109,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         }
         ?>
     </div>
-    <div class="footer">
+    <div class="section footer">
 
     </div>
 </div>
