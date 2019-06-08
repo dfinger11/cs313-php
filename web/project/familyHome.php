@@ -85,7 +85,9 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <br>
         <br>
-        <button class="button" onclick="location.href = 'addProject.php';">New Project</button>
+        <div class="centerContent">
+            <button class="button" onclick="location.href = 'addProject.php';">New Project</button>
+        </div>
         <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
@@ -93,8 +95,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         if($projectStatement->rowCount() > 0) {
 
             ?>
+            <h4 class="centerText">Your Families Projects</h4>
             <table class="centerContent">
-                <thead>Your Families Projects</thead>
                 <tr>
                     <th>Project Name</th>
                     <th style="width: 10px"></th>
@@ -135,6 +137,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 }
                 ?>
             </table>
+        <div class="centerContent">
             <form action="deleteProject.php" method="post">
                 <h3>Delete Project</h3>
                 Name of Project to be deleted: <input type="text" name="deadProject">
@@ -146,6 +149,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         }
         ?>
         <br>
+        </div>
     </div>
     <div class="section footer">
         <p class="footerClass">Derek Finger 2019</p>
