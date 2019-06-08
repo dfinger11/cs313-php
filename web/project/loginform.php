@@ -46,7 +46,6 @@ if (!empty($rowCount) && $rowCount == 1) {
         <div class="centerContent">
             <br>
             <h3>Login</h3>
-        <form action="loginform.php" method="post">
             <?php
             if($_SESSION['authenticated'] == true) {
                 header("Location: familyHome.php");
@@ -54,6 +53,7 @@ if (!empty($rowCount) && $rowCount == 1) {
                 ?><span style="color: red"><?php echo "Username or password is incorrect!"?></span><br><?php
             }
             ?>
+        <form action="loginform.php" method="post">
             Username:
             <br>
             <input type="text" name="username">
