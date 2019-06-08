@@ -33,7 +33,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
         </div>
     </div>
-    <div class="header">
+    <div class="section header">
         <h1 class="textHeader1">The Family Project Planner</h1>
         <br>
         <h2 class="textHeader2">Family Room</h2>
@@ -146,7 +146,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         }
         ?>
     </div>
-    <div class="footer">
+    <div class="section footer">
         <p class="footerClass">Derek Finger 2019</p>
     </div>
 </div>
