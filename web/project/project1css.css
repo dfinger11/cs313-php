@@ -95,8 +95,8 @@ h3 {
     margin: 0 auto;
 }
 
-.alignLeft {
-    margin-left: 100%;
+.menuLeft {
+    float: end;
 }
 
 #accContainer {

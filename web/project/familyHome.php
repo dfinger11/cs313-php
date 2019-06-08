@@ -32,7 +32,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
         </div>
-        <button class="button alignLeft" onclick="location.href = 'addProject.php';">New Project</button>
+        <button class="button menuLeft" onclick="location.href = 'addProject.php';">New Project</button>
     </div>
     <div class="section header">
         <h1 class="centerText">The Family Project Planner</h1>
