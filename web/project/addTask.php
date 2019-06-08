@@ -73,6 +73,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 </select>
                 <br>
                 <input class="button" type="submit">
+                <br>
             </form>
         </div>
     </div>
