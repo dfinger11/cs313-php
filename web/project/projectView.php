@@ -31,19 +31,20 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
             <button onclick="location.href = 'familyHome.php';" class="accordion">Family Room</button>
+            <button onclick="location.href = 'addTask.php';" class="accordion">Create Task</button>
             <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
         </div>
     </div>
     <div class="section header">
-        <h1 class="textHeader1">The Project Room</h1>
-        <h2 class="textHeader3">Here you can see all the tasks in your project called <?php echo $project ?></h2>
+        <h1>The Project Room</h1>
     </div>
     <div class="section content">
-        <button onclick="location.href = 'addTask.php';">Create Task</button>
-        <?php
-        $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk');");
-        $projectStatement->execute();
-        if($projectStatement->rowCount() > 0) {
+        <h2>Here you can see all the tasks in your project called <?php echo $project ?></h2>
+        <div class="centerContent">
+            <?php
+            $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk');");
+            $projectStatement->execute();
+            if($projectStatement->rowCount() > 0) {
 
             ?>
             <table>
@@ -108,6 +109,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             ?><span><?php echo "Looks like you don't have any tasks in this project."?></span><?php
         }
         ?>
+        </div>
     </div>
     <div class="section footer">
 
