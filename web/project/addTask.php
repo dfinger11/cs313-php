@@ -47,6 +47,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <br>
                 <textarea name="desc"></textarea>
                 <br>
+                <br>
                 <h4>Task Deadline:</h4>
                 <h4>Month</h4> <input type="number" maxlength="2"  name="month">
                 <br>
