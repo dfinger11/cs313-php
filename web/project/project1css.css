@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+    background-color: black;
 }
 
 h1 {
@@ -32,6 +33,7 @@ h3 {
 .section {
     width: 100%;
     display: flex;
+    background-color: white;
     justify-content: center;
     align-items: center;
 }
