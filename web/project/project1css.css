@@ -70,6 +70,14 @@ h3 {
     font-size: 20px
 }
 
+.loginForm {
+    margin: auto;
+}
+
+.loginText {
+    text-align: center;
+}
+
 #accContainer {
     display: none;
 }
