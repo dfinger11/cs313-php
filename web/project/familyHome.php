@@ -57,7 +57,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         $memberStatment->execute();
         ?>
         <br>
-        <table>
+        <table class="centerContent">
             <thead><?php echo "The $famName Family"?></thead>
             <tr>
                 <th>First Name</th>
@@ -85,7 +85,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </table>
         <br>
         <br>
-        <button onclick="location.href = 'addProject.php';">New Project</button>
+        <button class="button" onclick="location.href = 'addProject.php';">New Project</button>
         <br>
         <?php
         $projectStatement = $db->prepare("SELECT * FROM project WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
@@ -93,7 +93,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         if($projectStatement->rowCount() > 0) {
 
             ?>
-            <table>
+            <table class="centerContent">
                 <thead>Your Families Projects</thead>
                 <tr>
                     <th>Project Name</th>
@@ -142,7 +142,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             </form>
             <?php
         } else {
-            ?><span><?php echo "Looks like you don't have any projects."?></span><?php
+            ?><p class="centerText"><?php echo "Looks like you don't have any projects."?></p><?php
         }
         ?>
     </div>
