@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "../../database/dbConnect.php";
+require "logout.php";
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     $username = $_SESSION['username'];
     $db = get_db();
@@ -18,38 +19,54 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 </head>
 <body>
 <div class="page">
-    <div class="header">
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="accContainer">
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = 'familyHome.php';" class="accordion">Family Room</button>
+            <button onclick="location.href = 'projectView.php';" class="accordion">Project Room</button>
+            <button onclick="location.href = '?logOut';" class="accordion">Logout</button>
+        </div>
+    </div>
+    <div class=" section header">
         <h1 class="textHeader1">Create Task</h1>
     </div>
-    <div class="content">
-        <form action="addTaskForm.php" method="post">
-            <span style="color: red">*</span>Task Name: <input type="text" name="taskName">
-            <br>
-            <span style="color: red">*</span>Task Description: <textarea name="desc"></textarea>
-            <br>
-            Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
-            <br>
-            <span style="color: red">*</span>Task Assignment:
-            <select name="assignee">
-                <?php
-                $memberStatement = $db->prepare("SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
-                $memberStatement->execute();
-                while ($memberRow = &$memberStatement->fetch(PDO::FETCH_ASSOC)) {
-                    $fname = $memberRow['fname'];
-                    $lname = $memberRow['lname'];
-                    $fullname = $fname . ' ' . $lname;
-                    ?>
-                    <option value="<?php echo $fullname ?>" ><?php echo $fullname ?></option>
+    <div class="section content">
+        <div class="centerContent">
+            <form action="addTaskForm.php" method="post">
+                <span style="color: red">*</span>Task Name: <input type="text" name="taskName">
+                <br>
+                <span style="color: red">*</span>Task Description: <textarea name="desc"></textarea>
+                <br>
+                Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
+                <br>
+                <span style="color: red">*</span>Task Assignment:
+                <select name="assignee">
                     <?php
-                }
-                ?>
-            </select>
-            <br>
-            <input type="submit">
-        </form>
+                    $memberStatement = $db->prepare("SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
+                    $memberStatement->execute();
+                    while ($memberRow = &$memberStatement->fetch(PDO::FETCH_ASSOC)) {
+                        $fname = $memberRow['fname'];
+                        $lname = $memberRow['lname'];
+                        $fullname = $fname . ' ' . $lname;
+                        ?>
+                        <option value="<?php echo $fullname ?>" ><?php echo $fullname ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+                <br>
+                <input class="button" type="submit">
+            </form>
+        </div>
     </div>
-    <div class="footer">
-
+    <div class="section footer">
+        <p class="footerClass">Derek Finger 2019</p>
     </div>
 </div>
 </body>
