@@ -45,7 +45,9 @@ if(isset($_SESSION['authenticated'])) {
         <h3>Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="footer">
-
+        <div class="footer">
+            <p class="footerClass">Derek Finger 2019</p>
+        </div>
     </div>
 </div>
 </body>
