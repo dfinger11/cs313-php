@@ -41,11 +41,11 @@ if(isset($_SESSION['authenticated'])) {
             <form action="loginform.php" method="post">
                 Username:
                 <br>
-                <input type="text" name="username">
+                <input class="inputText" type="text" name="username">
                 <br>
                 Password:
                 <br>
-                <input type="password" name="password">
+                <input class="inputText" type="password" name="password">
                 <br>
                 <br>
                 <input class="button" type="submit" value="Login">
