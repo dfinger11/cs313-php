@@ -96,7 +96,7 @@ h3 {
 }
 
 .menuLeft {
-    display: flex;
+    position: absolute;
     align-self: end;
 }
 
