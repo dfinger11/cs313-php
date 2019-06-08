@@ -33,6 +33,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     </div>
     <div class="section header">
         <h1>Create Project</h1>
+        <br>
     </div>
     <div class="section content">
         <div class="centerContent">
@@ -41,8 +42,10 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 <br>
                 Project Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
                 <br>
-                <input class="button" type="submit">
+                <br>
+                <input class="button centerContent" type="submit">
             </form>
+            <br>
         </div>
     </div>
     <div class="section footer">
