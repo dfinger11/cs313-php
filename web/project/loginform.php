@@ -46,27 +46,27 @@ if (!empty($rowCount) && $rowCount == 1) {
         <div class="centerContent">
             <br>
             <h3>Login</h3>
-            <?php
-            if($_SESSION['authenticated'] == true) {
-                header("Location: familyHome.php");
-            } else {
-                ?><span style="color: red"><?php echo "Username or password is incorrect!"?></span><br><?php
-            }
-            ?>
-        <form action="loginform.php" method="post">
-            Username:
-            <br>
-            <input type="text" name="username">
-            <br>
-            Password:
-            <br>
-            <input type="password" name="password">
-            <br>
-            <br>
-            <input class="button" type="submit" value="Login">
-        </form>
+            <form action="loginform.php" method="post">
+                Username:
+                <br>
+                <input type="text" name="username">
+                <br>
+                Password:
+                <br>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <input class="button" type="submit" value="Login">
+            </form>
             <br>
         </div>
+        <?php
+        if($_SESSION['authenticated'] == true) {
+            header("Location: familyHome.php");
+        } else {
+            ?><span class="centerText" style="color: red"><?php echo "Username or password is incorrect!"?></span><br><?php
+        }
+        ?>
         <h3 class="centerText">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
         <br>
     </div>
