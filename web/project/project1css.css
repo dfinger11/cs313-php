@@ -75,7 +75,8 @@ h3 {
 }
 
 .centerContent {
-    width: 50%;
+    display: table;
+    margin: 0 auto;
 }
 
 #accContainer {
