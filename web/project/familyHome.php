@@ -34,10 +34,17 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         </div>
     </div>
     <div class="header">
-        <h1 class="textHeader1">The Family Room</h1>
-        <h2 class="textHeader3">Here you can see all the members of your family</h2>
+        <h1 class="textHeader1">The Family Project Planner</h1>
+        <br>
+        <h2 class="textHeader2">Family Room</h2>
+        <br>
+        <h3 class="textHeader3">
+            Here you can see all the members of your family.
+            <br>
+            To view a project click on the project name in the table.
+        </h3>
     </div>
-    <div class="content">
+    <div class="section content">
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
