@@ -18,22 +18,22 @@ if(isset($_SESSION['authenticated'])) {
 </head>
 <body>
 <div class="page">
-    <div class="header">
-        <div class='section menu'>
-            <div class="container" onclick="hamburgerFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <div id="accContainer">
-                <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
-                <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
-            </div>
+    <div class='section menu'>
+        <div class="container" onclick="hamburgerFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
+        <div id="accContainer">
+            <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
+        </div>
+    </div>
+    <div class="header">
         <h1 class="textHeader1">The Family Game Plan</h1>
         <h2 class="textHeader3">Designed to help you manage your family projects</h2>
     </div>
-    <div class="content">
+    <div class="section content">
         <h3>Login</h3>
         <form action="formLogin.php" method="post">
             Username: <input type="text" name="username">
