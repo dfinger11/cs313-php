@@ -46,7 +46,7 @@ if(isset($_SESSION['authenticated'])) {
             <br>
             <input type="submit" value="Login">
         </form>
-        <h3 class="loginCenter">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
+        <h3 class="centerText">Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
     <div class="section footer">
         <p class="footerClass">Derek Finger 2019</p>
