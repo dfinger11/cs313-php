@@ -31,10 +31,10 @@ if(isset($_SESSION['authenticated'])) {
         </div>
     </div>
     <div class="section header">
-        <h1 class="textHeader1">The Family Project Planner</h1>
+        <h1>The Family Project Planner</h1>
     </div>
     <div class="section content">
-        <h2 class="centerText loginCenter">Designed to help you manage your family projects</h2>
+        <h2 class="centerText">Designed to help you manage your family projects</h2>
         <div class="centerContent">
             <br>
             <h3>Login</h3>
