@@ -39,13 +39,17 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <div class="section content">
         <div class="centerContent">
             <form action="addTaskForm.php" method="post">
-                <span style="color: red">*</span>Task Name: <input type="text" name="taskName">
+                <span class="error">*</span>Task Name:
                 <br>
-                <span style="color: red">*</span>Task Description: <textarea name="desc"></textarea>
+                <input type="text" name="taskName">
+                <br>
+                <span class="error">*</span>Task Description:
+                <br>
+                <textarea name="desc"></textarea>
                 <br>
                 Task Deadline: Month <input type="number" maxlength="2"  name="month">, Day <input type="number" maxlength="2"  name="day">, Year <input type="number" maxlength="4"  name="year">
                 <br>
-                <span style="color: red">*</span>Task Assignment:
+                <span class="error">*</span>Task Assignment:
                 <select name="assignee">
                     <?php
                     $memberStatement = $db->prepare("SELECT fname, lname FROM famusers WHERE family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
