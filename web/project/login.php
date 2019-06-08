@@ -29,7 +29,7 @@ if(isset($_SESSION['authenticated'])) {
             <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
         </div>
     </div>
-    <div class="header">
+    <div class="section header">
         <h1 class="textHeader1">The Family Game Plan</h1>
         <h2 class="textHeader3">Designed to help you manage your family projects</h2>
     </div>
@@ -44,7 +44,7 @@ if(isset($_SESSION['authenticated'])) {
         </form>
         <h3>Don't have an account <a onclick="location.href = 'register.php';" style="color: blue">click here</a>!</h3>
     </div>
-    <div class="footer">
+    <div class="section footer">
         <div class="footer">
             <p class="footerClass">Derek Finger 2019</p>
         </div>
