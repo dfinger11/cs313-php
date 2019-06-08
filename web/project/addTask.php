@@ -39,23 +39,23 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <div class="section content">
         <div class="centerContent">
             <form action="addTaskForm.php" method="post">
-                <span class="error">*</span>Task Name:
+                <h4><span class="error">*</span>Task Name:</h4>
                 <br>
                 <input type="text" name="taskName">
                 <br>
-                <span class="error">*</span>Task Description:
+                <h4><span class="error">*</span>Task Description:</h4>
                 <br>
                 <textarea name="desc"></textarea>
                 <br>
-                Task Deadline:
+                <h4>Task Deadline:</h4>
                 <br>
-                Month <input type="number" maxlength="2"  name="month">
+                <h4>Month <input type="number" maxlength="2"  name="month"></h4>
                 <br>
-                Day <input type="number" maxlength="2"  name="day">
+                <h4>Day <input type="number" maxlength="2"  name="day"></h4>
                 <br>
-                Year <input type="number" maxlength="4"  name="year">
+                <h4>Year <input type="number" maxlength="4"  name="year"></h4>
                 <br>
-                <span class="error">*</span>Task Assignment:
+                <h4><span class="error">*</span>Task Assignment:</h4>
                 <br>
                 <select name="assignee">
                     <?php
