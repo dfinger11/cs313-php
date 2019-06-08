@@ -31,9 +31,9 @@ if(isset($_SESSION['authenticated'])) {
     </div>
     <div class="section header">
         <h1 class="textHeader1">The Family Game Plan</h1>
-        <h2 class="textHeader3">Designed to help you manage your family projects</h2>
     </div>
     <div class="section content">
+        <h2 class="textHeader3">Designed to help you manage your family projects</h2>
         <p>Login</p>
         <form action="formLogin.php" method="post">
             Username: <input type="text" name="username">
