@@ -19,6 +19,7 @@
         <div id="accContainer">
             <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
             <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = 'project/familyHome.php';" class="accordion">Project1: Family Project Planner</button>
         </div>
     </div>
     <div class='section header'>

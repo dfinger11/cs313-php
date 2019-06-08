@@ -25,8 +25,8 @@ if(isset($_SESSION['authenticated'])) {
             <div class="bar3"></div>
         </div>
         <div id="accContainer">
-            <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
-            <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
+            <button onclick="location.href = '../homepage.php';" id="homeButton" class="accordion">Home</button>
+            <button onclick="location.href = '../assignmentList.php';" class="accordion">Assignments</button>
         </div>
     </div>
     <div class="header">
