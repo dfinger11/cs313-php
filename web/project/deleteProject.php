@@ -8,7 +8,7 @@ if ($project != "" || $project != null || empty($project)) {
     $checkStatement->execute();
     $checkRows = $checkStatement->rowCount();
     if(!empty($checkRows) && $checkRows > 0) {
-        $deleteStatement = get_db()->prepare("DELETE FROM project WHERE project_name='$project' AND family_fk=(SELECT family_fk FROM famusers WHERE username='$username';");
+        $deleteStatement = get_db()->prepare("DELETE FROM project WHERE project_name='$project' AND family_fk=(SELECT family_fk FROM famusers WHERE username='$username');");
         $deleteStatement->execute();
     }
 }
