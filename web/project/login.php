@@ -12,12 +12,23 @@ if(isset($_SESSION['authenticated'])) {
     <meta charset='UTF-8'/>
     <meta name='viewport'
     <title>Family Game Plan Login</title>
-    <link rel='stylesheet' href=''/>
-    <script src=""></script>
+    <link rel='stylesheet' href='project1css.css'/>
+    <script src="project1js.js"></script>
 </head>
 <body>
 <div class="page">
     <div class="header">
+        <div class='section menu'>
+            <div class="container" onclick="hamburgerFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div id="accContainer">
+                <button onclick="location.href = 'homepage.php';" id="homeButton" class="accordion">Home</button>
+                <button onclick="location.href = 'assignmentList.php';" class="accordion">Assignments</button>
+            </div>
+        </div>
         <h1 class="textHeader1">The Family Game Plan</h1>
         <h2 class="textHeader3">Designed to help you manage your family projects</h2>
     </div>
