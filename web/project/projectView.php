@@ -39,7 +39,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <h1>The Project Room</h1>
     </div>
     <div class="section content">
-        <h3 class="centerText">Here is the list of all tasks for this project.<?php echo $project ?></h3>
+        <h2 class="centerText"><?php echo $project ?></h2>
         <div class="centerContent">
             <?php
             $projectStatement = $db->prepare("SELECT * FROM task WHERE project_fk=(SELECT project_pk FROM project WHERE project_name='$project' AND project_pk='$projectPk');");
@@ -47,6 +47,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             if($projectStatement->rowCount() > 0) {
 
             ?>
+            <h3 class="centerText">Here is the list of all tasks for this project.</h3>
             <table>
                 <thead>Your Families Projects</thead>
                 <tr>
@@ -107,8 +108,8 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <?php
         } else {
             ?>
-                <p class="centerText"><?php echo "Looks like you don't have any tasks in this project."?></p>
-                <p class="centerText"><?php echo "To add a task open the menu and click \"Create Task\""?></p>
+                <h3 class="centerText"><?php echo "Looks like you don't have any tasks in this project."?></h3>
+                <h4 class="centerText"><?php echo "To add a task open the menu and click \"Create Task\""?></h4>
                 <?php
         }
         ?>
