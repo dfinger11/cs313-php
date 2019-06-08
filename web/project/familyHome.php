@@ -146,11 +146,11 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         } else {
             ?>
             <p class="centerText"><?php echo "Looks like you don't have any projects."?></p>
-            <br>
-            <p class="centerText"><?php echo "To add a project open the menu and click \"New Project\""?></p>
             <?php
         }
         ?>
+            <br>
+            <p class="centerText"><?php echo "To add a project open the menu and click \"New Project\""?></p>
         <br>
         </div>
     </div>
