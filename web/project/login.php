@@ -1,7 +1,5 @@
 <?php
 session_start();
-$_SESSION['authenticated'] = true;
-$_SESSION['username'] = 'DarthVader';
 if(isset($_SESSION['authenticated'])) {
     if($_SESSION['authenticated'] == true) {
         header("Location: familyHome.php");
