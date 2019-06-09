@@ -43,6 +43,7 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <br>
         <h3 class="centerText">Here you can see all the members of your family.</h3>
         <h3 class="centerText">To view a project click on the project name in the table.</h3>
+        <h4 class="centerText"><?php echo "To add a project open the menu and click \"New Project\""?></h4>
         <?php
         $famStatement = $db->prepare("SELECT family_name FROM family WHERE family_pk=
                                      (
@@ -149,8 +150,6 @@ if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
             <?php
         }
         ?>
-            <br>
-            <p class="centerText"><?php echo "To add a project open the menu and click \"New Project\""?></p>
         <br>
         </div>
     </div>
